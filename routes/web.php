@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/autentikasi/login',[AutentikasiController::class, 'login'])->name('login');
-Route::get('/aplikasi/general-dashboard',[DashboardController::class, 'generalDashboard'])->name('dasboard');
+Route::get('/aplikasi/general-dashboard',[DashboardController::class, 'generalDashboard'])->name('dashboard');

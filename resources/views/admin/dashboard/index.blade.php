@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="description" content="Icewall admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
-        <title>Dashboard - Icewall - Tailwind HTML Admin Template</title>
+        <title>Visca Koperasi - General Dashboard</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
         <!-- END: CSS Assets-->
@@ -532,11 +532,11 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN: Logo -->
                 <a href="" class="-intro-x hidden md:flex">
                     <img alt="Icewall Tailwind HTML Admin Template" class="w-6" src="{{ asset('dist/images/logo.svg') }}">
-                    <span class="text-white text-lg ml-3"> Ice<span class="font-medium">wall</span> </span>
+                    <span class="text-white text-lg ml-3"> <span class="font-medium">Visca Koperasi</span> </span>
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->
-                <div class="-intro-x breadcrumb mr-auto"> <a href="">Application</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Dashboard</a> </div>
+                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Dashboard</a> </div>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Search -->
                 <div class="intro-x relative mr-3 sm:mr-6">
@@ -2022,9 +2022,61 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
         </div>
         <!-- BEGIN: JS Assets-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script>
         <script src="{{ asset('dist/js/app.js') }}"></script>
+        <script>
+            // cek package jquery
+            $(document).ready(function(){
+                // Fungsi untuk mendapatkan nilai cookie
+                function getCookie(name) {
+                    var cookieName = name + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var cookieArray = decodedCookie.split(';');
+
+                    for (var i = 0; i < cookieArray.length; i++) {
+                        var cookie = cookieArray[i];
+                        while (cookie.charAt(0) === ' ') {
+                            cookie = cookie.substring(1);
+                        }
+                        if (cookie.indexOf(cookieName) === 0) {
+                            return cookie.substring(cookieName.length, cookie.length);
+                        }
+                    }
+                }
+
+                var token = getCookie('token');
+
+                if (token) {
+                    // Token ada dalam cookie, lakukan tindakan yang sesuai
+                    console.log('Token:', token);
+                } else {
+                    window.location.href = "{{ route('login') }}";
+                }
+
+                var url = '{{ env('BASE_URL') }}api/dashboard/home';
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                }).then(response => response.json()).then(data => {
+
+                    $('.nama-user').text(data.name);
+                    $('.role-user').text(data.role);
+                    $('#sambutan').text(data.name);
+
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+                function logout(name) {
+                    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    window.location.href = "{{ route('login') }}";
+                }
+            });
+        </script>
         <!-- END: JS Assets-->
     </body>
 </html>
