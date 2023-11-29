@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Secret\AutentikasiController;
 use App\Http\Controllers\Secret\DashboardController;
+use App\Http\Controllers\Secret\MasteradminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/autentikasi/login',[AutentikasiController::class, 'login'])->name('login');
 Route::get('/aplikasi/general-dashboard',[DashboardController::class, 'generalDashboard'])->name('dashboard');
+Route::get('/aplikasi/master-admin',[MasteradminController::class, 'index'])->name('masteradmin');

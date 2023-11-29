@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Secret\DashboardController;
 use App\Http\Controllers\Secret\AutentikasiController;
+use App\Http\Controllers\Secret\MasteradminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +27,12 @@ Route::prefix('autentikasi')->group(function () {
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('dashboard')->group(function () {
-        Route::get("/home", [DashboardController::class, 'index']);
+        Route::get("/home", [DashboardController::class, 'dashboardData']);
+        // Route::get("/profil", [DashboardController::class, 'profile']);
+    });
+
+    Route::prefix('master-admin')->group(function () {
+        Route::get("/list", [MasteradminController::class, 'listAdmin']);
         // Route::get("/profil", [DashboardController::class, 'profile']);
     });
 
