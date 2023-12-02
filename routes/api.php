@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Secret\DashboardController;
 use App\Http\Controllers\Secret\AutentikasiController;
+use App\Http\Controllers\Secret\EmployeeController;
 use App\Http\Controllers\Secret\MasteradminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::delete("/hapus/{id}", [MasteradminController::class, 'hapus']);
     });
 
+    Route::prefix('master-employee')->group(function () {
+        Route::post("/list", [EmployeeController::class, 'listPegawai']);
+        Route::post("/tambah", [EmployeeController::class, 'addPegawai']);
+        Route::get("/verifikasi/{id}", [EmployeeController::class, 'verify']);
+        Route::put("/update/{id}", [EmployeeController::class, 'updatePegawai']);
+        Route::delete("/hapus/{id}", [EmployeeController::class, 'hapus']);
+    });
 });
 
 // Testing Email

@@ -89,7 +89,7 @@ class MasteradminController extends Controller
 
     public function updateData(Request $request, $id)
     {
-        $find = User::where('id',$id)->where('role_id',1)->first();
+        $find = User::where('id',$id)->where('role_id',1)->where('deleted_at',null)->first();
         if(!$find)
         {
             return response()->json([

@@ -46,7 +46,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="menu menu--active">
+                    <a href="{{ route('masteremployee') }}" class="menu menu--active">
                         <div class="menu__icon"> <i data-feather="user"></i> </div>
                         <div class="menu__title"> Master Pegawai </div>
                     </a>
@@ -476,7 +476,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="side-menu">
+                            <a href="{{ route('masteremployee') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user"></i> </div>
                                 <div class="side-menu__title"> Master Pegawai </div>
                             </a>
