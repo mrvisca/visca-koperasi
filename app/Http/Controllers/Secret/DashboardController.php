@@ -33,6 +33,7 @@ class DashboardController extends Controller
             'email' => Auth::user()->email,
             'role_id' => Auth::user()->role_id,
             'jabatan' => $role,
+            'kode' => Auth::user()->kode,
         ];
 
         return response()->json($data, 200);

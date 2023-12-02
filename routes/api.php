@@ -33,7 +33,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('master-admin')->group(function () {
         Route::get("/list", [MasteradminController::class, 'listAdmin']);
+        Route::post("/add", [MasteradminController::class, 'addAdmin']);
+        Route::put("/update/{id}", [MasteradminController::class, 'updateData']);
         // Route::get("/profil", [DashboardController::class, 'profile']);
     });
 
+});
+
+// Testing Email
+Route::prefix('test')->group(function () {
+    // Route::get("/profil", [DashboardController::class, 'profile']);
+    Route::get("/test-email", [MasteradminController::class, 'testEmail']);
 });

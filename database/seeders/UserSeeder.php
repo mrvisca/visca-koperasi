@@ -23,7 +23,8 @@ class UserSeeder extends Seeder
                 'email' => 'bimasaktiputra@mrvisca.tech',
                 'password' => Hash::make('11223344'),
                 'role_id' => 1,
-                'email_verified_at' => '2023-11-25 23:08:00'
+                'email_verified_at' => '2023-11-25 23:08:00',
+                'kode' => 6663629,
             ],
             [
                 'id' => 2,
@@ -31,7 +32,8 @@ class UserSeeder extends Seeder
                 'email' => 'bimasaktiputra95@gmail.com',
                 'password' => Hash::make('11223344'),
                 'role_id' => 2,
-                'email_verified_at' => '2023-11-25 23:08:00'
+                'email_verified_at' => '2023-11-25 23:08:00',
+                'kode' => null,
             ],
         ];
 

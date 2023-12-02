@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('role_id');
+            $table->string('kode', 20)->nullable();
+            $table->bigInteger('deleted_by')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

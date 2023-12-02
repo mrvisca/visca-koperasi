@@ -452,6 +452,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="p-4 border-b border-theme-12 dark:border-dark-3">
                                 <div class="font-medium nama-akun"></div>
                                 <div class="text-xs text-theme-13 mt-0.5 dark:text-gray-600 role-akun"></div>
+                                <div class="text-xs text-theme-13 mt-0.5 dark:text-gray-600 codeblue">Hallo</div>
                             </div>
                             <div class="p-2">
                                 <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
@@ -848,7 +849,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             List Master Admin
                         </h2>
                         <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-                            <button class="btn btn-primary shadow-md mr-2">Tambah Data</button>
+                            <button class="btn btn-primary shadow-md mr-2 tambah-admin">Tambah Data</button>
                         </div>
                     </div>
                     <!-- BEGIN: HTML Table Data -->
@@ -872,6 +873,164 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- END: HTML Table Data -->
                 </div>
                 <!-- END: Content -->
+                <!-- BEGIN: Modal Create Data Content -->
+                <div id="modal-create" class="modal" tabindex="-1" aria-hidden="true" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- BEGIN: Modal Header -->
+                            <div class="modal-header">
+                                <h2 class="font-medium text-base mr-auto">
+                                    Form Tambah Administrator
+                                </h2>
+                                <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
+                            </div>
+                            <!-- END: Modal Header -->
+                            <!-- BEGIN: Modal Body -->
+                            <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-1" class="form-label">Nama</label>
+                                    <input type="text" class="form-control frm-nama" placeholder="Jhon Doe" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="fileInput" class="form-label">Email</label>
+                                    <input type="email" class="form-control frm-email" placeholder="jhon@mail.com" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Password</label>
+                                    <input type="password" class="form-control frm-password" placeholder="******" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Role</label>
+                                    <input type="hidden" class="form-control frm-role_id" value="1" required>
+                                    <input type="text" class="form-control frm-roles" placeholder="Administrator" value="Administrator" disabled>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="fileInput" class="form-label">Kode Rahasia</label>
+                                    <input type="email" class="form-control frm-kode-rahasia" placeholder="Silahkan masukan kode akses anda" required>
+                                </div>
+                            </div>
+                            <!-- END: Modal Body -->
+                            <!-- BEGIN: Modal Footer -->
+                            <div class="modal-footer text-right">
+                                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
+                                <button type="button" class="btn btn-primary w-20 btn-simpan">Simpan</button>
+                            </div>
+                            <!-- END: Modal Footer -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Create Sukses Content -->
+                <div id="success-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Tambah Data Administrator Berhasil!</div>
+                                    <div class="text-gray-600 mt-2 pesan-sukses"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Create Gagal Content -->
+                <div id="warning-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Oops...Tambah Data Gagal!</div>
+                                    <div class="text-gray-600 mt-2 pesan-gagal"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Update Content -->
+                <div id="modal-update" class="modal" tabindex="-1" aria-hidden="true" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- BEGIN: Modal Header -->
+                            <div class="modal-header">
+                                <h2 class="font-medium text-base mr-auto">
+                                    Form Update Administrator
+                                </h2>
+                                <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
+                            </div>
+                            <!-- END: Modal Header -->
+                            <!-- BEGIN: Modal Body -->
+                            <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-1" class="form-label">Nama</label>
+                                    <input type="hidden" class="form-control update-id" required>
+                                    <input type="text" class="form-control update-nama" placeholder="Jhon Doe" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="fileInput" class="form-label">Email</label>
+                                    <input type="email" class="form-control update-email" placeholder="jhon@mail.com" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="fileInput" class="form-label">Kode Rahasia</label>
+                                    <input type="email" class="form-control update-kode-rahasia" placeholder="Silahkan masukan kode akses anda" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12 khusus1">
+                                    <label for="modal-form-2" class="form-label">Password</label>
+                                    <input type="password" class="form-control update-password" placeholder="********" >
+                                </div>
+                                <div class="col-span-12 sm:col-span-12 khusus2">
+                                    <label for="modal-form-2" class="form-label">Role</label>
+                                    <select class="form-select role_id">
+                                        <option value="1"> Superadmin </option>
+                                        <option value="2"> Customer Service </option>
+                                        <option value="3"> Dept Collection </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- END: Modal Body -->
+                            <!-- BEGIN: Modal Footer -->
+                            <div class="modal-footer text-right">
+                                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
+                                <button type="button" class="btn btn-primary w-20 btn-update">Update</button>
+                            </div>
+                            <!-- END: Modal Footer -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Update Sukses Content -->
+                <div id="success-update-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Update Data Administrator Berhasil!</div>
+                                    <div class="text-gray-600 mt-2 update-sukses"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Update Gagal Content -->
+                <div id="warning-update-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Oops...Update Data Gagal!</div>
+                                    <div class="text-gray-600 mt-2 update-gagal"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
             </div>
         </div>
         <!-- BEGIN: JS Assets-->
@@ -907,6 +1066,12 @@ License: You must have a valid license purchased only from themeforest(the above
                     window.location.href = "{{ route('login') }}";
                 }
 
+                // Hide Element
+                $('.codeblue').hide();
+                $('.khusus1').hide();
+                $('.khusus2').hide();
+                $('.btn-simpan').hide();
+
                 var url = '{{ env('BASE_URL') }}api/dashboard/home';
                 fetch(url, {
                     method: 'GET',
@@ -917,9 +1082,75 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     $('.nama-akun').text(data.name);
                     $('.role-akun').text(data.jabatan);
+                    $('.codeblue').text(data.kode);
 
                 }).catch(error => {
                     console.error('Error:', error);
+                });
+
+                // Modal Tambah data admin
+                $(".tambah-admin").click(function() {
+                    // Show the modal
+                    cash("#modal-create").modal("show");
+                });
+
+                // Akses Administrator Tambah Data
+                $(".frm-kode-rahasia").change(function() {
+                    var selectedValue = $(this).val();
+                    var compare = $('.codeblue').text();
+                    if(selectedValue == compare)
+                    {
+                        $('.btn-simpan').show();
+                    }
+                });
+
+                // Fungsi tombol simpan
+                $(".btn-simpan").click(function() {
+                    // Show the modal
+                    event.preventDefault(); // Prevent default form submission
+
+                    // Get form data
+                    var name = $(".frm-nama").val();
+                    var email = $(".frm-email").val();
+                    var password = $(".frm-password").val();
+                    var role_id = $(".frm-role_id").val();
+
+                    // Send data using Ajax
+                    $.ajax({
+                        url: '{{ env('BASE_URL') }}api/master-admin/add/',
+                        type: "POST",
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                        },
+                        data: {
+                            name: name,
+                            email: email,
+                            password: password,
+                            role_id: role_id,
+                        },
+                        success: function(response) {
+                            // Show the modal
+                            $('.pesan-sukses').text(response.message);
+                            cash("#success-modal-preview").modal("show");
+
+                            setTimeout(function() {
+                                cash("#success-modal-preview").modal("hide");
+
+                                location.reload();
+                            }, 3000); // 3000 milliseconds = 3 seconds
+                        },
+                        error: function(xhr, status, error) {
+                            // Show error alert
+                            $('.pesan-gagal').text(response.message);
+                            cash("#warning-modal-preview").modal("show");
+
+                            setTimeout(function() {
+                                cash("#warning-modal-preview").modal("hide");
+
+                                location.reload();
+                            }, 5000); // 3000 milliseconds = 3 seconds
+                        }
+                    });
                 });
 
                 // Ambil Data Admin
@@ -981,10 +1212,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                 render: function (data, type, row) {
 
                                     // Create action buttons
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-phone="' + data.phone + '" data-title="' + data.title + '" data-subtitle="' + data.subtitle + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
+                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
+                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
 
                                     // Combine the buttons
-                                    var actions = editBtn;
+                                    var actions = editBtn + '  ||  ' + deleteBtn;
                                     return actions;
                                 }
                             }
@@ -998,86 +1230,79 @@ License: You must have a valid license purchased only from themeforest(the above
                         }
                     });
 
-                    // // Handle button click events
-                    // $('#data-table').on('click', '.btn-edit', function() {
-                    //     cash("#modal-update").modal("show");
-                    //     var id = $(this).attr("data-id");
-                    //     var name = $(this).attr("data-name");
-                    //     var email = $(this).attr("data-email");
-                    //     var phone = $(this).attr("data-phone");
-                    //     var title = $(this).attr("data-title");
-                    //     var subtitle = $(this).attr("data-subtitle");
+                    // Handle button click events
+                    $('#data-table').on('click', '.btn-edit', function() {
+                        cash("#modal-update").modal("show");
+                        var id = $(this).attr("data-id");
+                        var name = $(this).attr("data-name");
+                        var email = $(this).attr("data-email");
+                        var role_id = $(this).attr("data-role_id");
 
-                    //     // Handle edit action
-                    //     $('.update-id').val(id);
-                    //     $('.update-nama').val(name);
-                    //     $('.update-email').val(email);
-                    //     $('.update-phone').val(phone);
-                    //     $('.update-title').val(title);
-                    //     $('.update-subtitle').val(subtitle);
-                    // });
-
-                    // // Tombol Update Admin
-                    // $(".update-btn").click(function() {
-                    //     // Ajax update
-                    //     var id = $('.update-id').val();
-                    //     var name = $('.update-nama').val();
-                    //     var email = $('.update-email').val();
-                    //     var phone = $('.update-phone').val();
-                    //     var title = $('.update-title').val();
-                    //     var subtitle = $('.update-subtitle').val();
-                    //     var kode = $('.update-kode').val();
-
-                    //     // Kirim permintaan pembaruan produk ke API
-                    //     $.ajax({
-                    //         url: '{{ env('BASE_URL') }}api/profile/update/' + id,
-                    //         type: "PUT",
-                    //         beforeSend: function(xhr) {
-                    //             xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                    //         },
-                    //         data: {
-                    //             name: name,
-                    //             email: email,
-                    //             phone: phone,
-                    //             title: title,
-                    //             subtitle: subtitle,
-                    //             kode: kode,
-                    //         },
-                    //         success: function(response) {
-                    //             // Show the modal
-                    //             $('.update-sukses').text(response.message);
-                    //             cash("#success-update-modal-preview").modal("show");
-
-                    //             setTimeout(function() {
-                    //                 cash("#success-update-modal-preview").modal("hide");
-
-                    //                 location.reload();
-                    //             }, 3000); // 3000 milliseconds = 3 seconds
-                    //         },
-                    //         error: function(xhr, status, error) {
-                    //             // Tangani kesalahan dalam permintaan Ajax itu sendiri
-                    //             console.log(error);
-
-                    //             // Tampilkan pesan kesalahan yang dikirim oleh server
-                    //             var response = JSON.parse(xhr.responseText);
-                    //             if (response.success === false && response.message) {
-                    //                 $('.update-gagal').text(response.message);
-                    //                 cash("#warning-update-modal-preview").modal("show");
-
-                    //                 setTimeout(function() {
-                    //                     cash("#warning-update-modal-preview").modal("hide");
-
-                    //                     location.reload();
-                    //                 }, 5000); // 5000 milliseconds = 5 seconds
-                    //             } else {
-                    //                 // Tangani kesalahan lainnya jika ada
-                    //                 // Contoh: pesan kesalahan bawaan dari permintaan Ajax
-                    //                 alert('Terjadi kesalahan lainnya: ' + error);
-                    //             }
-                    //         }
-                    //     });
-                    // });
+                        // Handle edit action
+                        $('.update-id').val(id);
+                        $('.update-nama').val(name);
+                        $('.update-email').val(email);
+                        $('.update-role_id').val(role_id);
+                    });
                 }
+
+                // Akses Administrator
+                $(".update-kode-rahasia").change(function() {
+                    var selectedValue = $(this).val();
+                    var compare = $('.codeblue').text();
+                    if(selectedValue == compare)
+                    {
+                        $('.khusus1').show();
+                        $('.khusus2').show();
+                    }
+                });
+
+                // Tombol Update Admin
+                $(".btn-update").click(function() {
+                    // Ajax update
+                    var id = $('.update-id').val();
+                    var name = $('.update-nama').val();
+                    var email = $('.update-email').val();
+                    var password = $('.update-password').val();
+                    var role_id = $('.update-role_id').val();
+
+                    // Kirim permintaan pembaruan produk ke API
+                    $.ajax({
+                        url: '{{ env('BASE_URL') }}api/master-admin/update/' + id,
+                        type: "PUT",
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                        },
+                        data: {
+                            name: name,
+                            email: email,
+                            password: password,
+                            role_id: role_id,
+                        },
+                        success: function(response) {
+                            // Show the modal
+                            $('.update-sukses').text(response.message);
+                            cash("#success-update-modal-preview").modal("show");
+
+                            setTimeout(function() {
+                                cash("#success-update-modal-preview").modal("hide");
+
+                                location.reload();
+                            }, 3000); // 3000 milliseconds = 3 seconds
+                        },
+                        error: function(xhr, status, error) {
+                            // Show error alert
+                            $('.update-gagal').text(response.message);
+                            cash("#warning-update-modal-preview").modal("show");
+
+                            setTimeout(function() {
+                                cash("#warning-update-modal-preview").modal("hide");
+
+                                location.reload();
+                            }, 5000); // 3000 milliseconds = 3 seconds
+                        }
+                    });
+                });
 
                 function logout(name) {
                     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
