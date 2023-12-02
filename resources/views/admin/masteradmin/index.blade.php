@@ -29,6 +29,26 @@ License: You must have a valid license purchased only from themeforest(the above
             #data-table_filter {
                 color: white;      /* Mengatur warna teks menjadi putih */
             }
+            /* Custom DataTables Styling */
+            .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+            .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+                color: #000 !important;
+                background-color: #007bff !important; /* Ganti dengan warna latar belakang yang diinginkan */
+                border-color: #007bff !important;
+            }
+
+            .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+                color: #495057 !important;
+                background-color: #e9ecef !important; /* Ganti dengan warna latar belakang yang diinginkan */
+                border-color: #dee2e6 !important;
+            }
+
+            .dataTables_wrapper .dataTables_paginate .paginate_button {
+                color: #007bff !important; /* Ganti dengan warna teks yang diinginkan */
+                background-color: #000 !important;
+                border-color: #007bff !important;
+            }
+
         </style>
         <!-- END: CSS Assets-->
     </head>
