@@ -19,7 +19,7 @@ class MasteradminController extends Controller
 
     public function listAdmin()
     {
-        $user = User::where('role_id',1)->orderby('id','desc')->get();
+        $user = User::where('role_id',1)->where('deleted_at',null)->orderby('id','desc')->get();
         $no = 1;
         $data = array();
         foreach($user as $u)
@@ -125,5 +125,26 @@ class MasteradminController extends Controller
         return response()->json([
             'message' => 'cek email kamu ya gaes, buat lihat formatnya',
         ],200);
+    }
+
+    public function hapus($id)
+    {
+        $find = User::where('id',$id)->where('role_id',1)->first();
+        if($find)
+        {
+            $find->deleted_at = date('Y-m-d H:i:s');
+            $find->deleted_by = Auth::user()->id;
+            $find->save();
+
+            return response()->json([
+                'succes' => true,
+                'message' => 'Berhasil menghapus akun administrator',
+            ],201);
+        }else{
+            return response()->json([
+                'success' => false,
+                'message' => 'Gagal menghapus data, data tidak ditemukan pada sistem kami',
+            ],400);
+        }
     }
 }

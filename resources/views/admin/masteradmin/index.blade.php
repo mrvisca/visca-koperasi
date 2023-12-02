@@ -1031,6 +1031,61 @@ License: You must have a valid license purchased only from themeforest(the above
                     </div>
                 </div>
                 <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Delete Content -->
+                <div id="delete-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-24 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Apa kamu yakin ingin hapus data administrator ini?</div>
+                                    <div class="text-gray-600 mt-2">
+                                        Apa kamu yakin akan menghapus data administrator ini?
+                                        <br>
+                                        Data yang dihapus tidak akan bisa dikembalikan.
+                                    </div>
+                                </div>
+                                <div class="px-5 pb-8 text-center">
+                                    <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Batalkan</button>
+                                    <button type="button" class="btn btn-danger w-24 hapus-btn">Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Hapus Sukses Content -->
+                <div id="success-hapus-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Hapus Data Administrator Berhasil!</div>
+                                    <div class="text-gray-600 mt-2 hapus-sukses"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+                <!-- BEGIN: Modal Hapus Gagal Content -->
+                <div id="warning-hapus-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body p-0">
+                                <div class="p-5 text-center">
+                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
+                                    <div class="text-3xl mt-5">Oops...Hapus Data Administrator Gagal!</div>
+                                    <div class="text-gray-600 mt-2 hapus-gagal"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Modal Content -->
+            </div>
+            <!-- END: Content -->
             </div>
         </div>
         <!-- BEGIN: JS Assets-->
@@ -1230,7 +1285,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         }
                     });
 
-                    // Handle button click events
+                    // Passing data list row ke dalam modal update
                     $('#data-table').on('click', '.btn-edit', function() {
                         cash("#modal-update").modal("show");
                         var id = $(this).attr("data-id");
@@ -1243,6 +1298,45 @@ License: You must have a valid license purchased only from themeforest(the above
                         $('.update-nama').val(name);
                         $('.update-email').val(email);
                         $('.update-role_id').val(role_id);
+                    });
+
+                    // Fungsi Tombol hapus
+                    $('#data-table').on('click', '.btn-delete', function() {
+                        var id = $(this).attr("data-id");
+                        cash("#delete-modal-preview").modal("show");
+                        $('.hapus-btn').show();
+                        $('.hapus-btn').click(function() {
+                            // Ajax delete Api
+                            $.ajax({
+                                url: '{{ env('BASE_URL') }}api/master-admin/hapus/' + id,
+                                type: 'DELETE',
+                                headers: {
+                                    'Authorization': 'Bearer ' + token
+                                },
+                                success: function(response) {
+                                        // Show the modal
+                                        $('.hapus-sukses').text(response.message);
+                                        cash("#success-hapus-modal-preview").modal("show");
+
+                                        setTimeout(function() {
+                                            cash("#success-hapus-modal-preview").modal("hide");
+
+                                            location.reload();
+                                        }, 3000); // 3000 milliseconds = 3 seconds
+                                    },
+                                    error: function(xhr, status, error) {
+                                        // Show error alert
+                                        $('.hapus-gagal').text(response.message);
+                                        cash("#warning-hapus-modal-preview").modal("show");
+
+                                        setTimeout(function() {
+                                            cash("#warning-update-modal-preview").modal("hide");
+
+                                            location.reload();
+                                        }, 5000); // 3000 milliseconds = 3 seconds
+                                    }
+                            });
+                        });
                     });
                 }
 

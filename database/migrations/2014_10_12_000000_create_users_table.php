@@ -22,6 +22,7 @@ return new class extends Migration
             $table->bigInteger('deleted_by')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

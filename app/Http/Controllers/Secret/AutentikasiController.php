@@ -28,7 +28,7 @@ class AutentikasiController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->where('deleted_at',null)->first();
 
         if ($user == null) {
             return response([
@@ -44,7 +44,7 @@ class AutentikasiController extends Controller
             ],401);
         }
 
-        $checkPass = User::where("password", "!=", Hash::check($request->password, $user->password))->first();
+        $checkPass = User::where("password", "!=", Hash::check($request->password, $user->password))->where('deleted_at',null)->first();
 
         if ($checkPass == null) {
             return response([
