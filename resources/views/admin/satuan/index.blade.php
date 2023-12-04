@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="description" content="Icewall admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
-        <title>Visca Koperasi - Master Admin</title>
+        <title>Visca Koperasi - Master Unit Satuan</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
         <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -389,7 +389,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->
-                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Master Admin</a> </div>
+                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Master Unit Satuan</a> </div>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Notifications -->
                 <div class="intro-x dropdown mr-4 sm:mr-6">
@@ -870,7 +870,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="content">
                     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
                         <h2 class="text-lg font-medium mr-auto">
-                            List Master Admin
+                            List Master Unit Satuan
                         </h2>
                         <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
                             <button class="btn btn-primary shadow-md mr-2 tambah-admin">Tambah Data</button>
@@ -882,10 +882,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <table id="data-table" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">ID</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Id</th>
                                         <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Nama</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Email</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Role</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Satuan</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Operator</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Nilai</th>
                                         <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Aksi</th>
                                     </tr>
                                 </thead>
@@ -904,7 +905,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Header -->
                             <div class="modal-header">
                                 <h2 class="font-medium text-base mr-auto">
-                                    Form Tambah Pegawai
+                                    Form Tambah Unit Satuan
                                 </h2>
                                 <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             </div>
@@ -912,28 +913,20 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Body -->
                             <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama</label>
-                                    <input type="text" class="form-control frm-nama" placeholder="Jhon Doe" required>
+                                    <label for="modal-form-1" class="form-label">Nama Satuan</label>
+                                    <input type="text" class="form-control frm-nama" placeholder="Pax / Box / Pieces" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control frm-email" placeholder="jhon@mail.com" required>
+                                    <label for="modal-form-1" class="form-label">Satuan</label>
+                                    <input type="text" class="form-control frm-satuan" placeholder="Box / Pax / Pcs" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Password</label>
-                                    <input type="password" class="form-control frm-password" placeholder="******" required>
+                                    <label for="fileInput" class="form-label">Operator</label>
+                                    <input type="text" class="form-control frm-operator" placeholder="* / +" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Role</label>
-                                    <select class="form-select frm-role_id" required>
-                                        <option disabled selected> --- Pilih Role Akun --- </option>
-                                        <option value="2"> Customer Service </option>
-                                        <option value="3"> Dept Collection </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Kode Rahasia</label>
-                                    <input type="email" class="form-control frm-kode-rahasia" placeholder="Silahkan masukan kode akses anda" required>
+                                    <label for="modal-form-2" class="form-label">Nilai Satuan</label>
+                                    <input type="text" class="form-control frm-nilai" placeholder="12" required>
                                 </div>
                             </div>
                             <!-- END: Modal Body -->
@@ -954,7 +947,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Tambah Data Pegawai Berhasil!</div>
+                                    <div class="text-3xl mt-5">Tambah Data Unit Satuan Berhasil!</div>
                                     <div class="text-gray-600 mt-2 pesan-sukses"></div>
                                 </div>
                             </div>
@@ -984,7 +977,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Header -->
                             <div class="modal-header">
                                 <h2 class="font-medium text-base mr-auto">
-                                    Form Update Pegawai
+                                    Form Update Unit Satuan
                                 </h2>
                                 <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             </div>
@@ -992,29 +985,21 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Body -->
                             <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama</label>
+                                    <label for="modal-form-1" class="form-label">Nama Satuan</label>
                                     <input type="hidden" class="form-control update-id" required>
-                                    <input type="text" class="form-control update-nama" placeholder="Jhon Doe" required>
+                                    <input type="text" class="form-control update-nama" placeholder="Pax / Box / Pieces" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control update-email" placeholder="jhon@mail.com" required>
+                                    <label for="fileInput" class="form-label">Satuan</label>
+                                    <input type="text" class="form-control update-satuan" placeholder="Pax / Box / Pieces" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Kode Rahasia</label>
-                                    <input type="email" class="form-control update-kode-rahasia" placeholder="Silahkan masukan kode akses anda" required>
+                                    <label for="fileInput" class="form-label">Operator</label>
+                                    <input type="text" class="form-control update-operator" placeholder="* / +" required>
                                 </div>
-                                <div class="col-span-12 sm:col-span-12 khusus1">
-                                    <label for="modal-form-2" class="form-label">Password</label>
-                                    <input type="password" class="form-control update-password" placeholder="********" >
-                                </div>
-                                <div class="col-span-12 sm:col-span-12 khusus2">
-                                    <label for="modal-form-2" class="form-label">Role</label>
-                                    <select class="form-select update-role_id">
-                                        <option value="" selected disabled> --- Pilih Role Akun --- </option>
-                                        <option value="2"> Customer Service </option>
-                                        <option value="3"> Dept Collection </option>
-                                    </select>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Nilai Satuan</label>
+                                    <input type="text" class="form-control update-value-nilai" placeholder="12" required>
                                 </div>
                             </div>
                             <!-- END: Modal Body -->
@@ -1035,7 +1020,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Update Data Pegawai Berhasil!</div>
+                                    <div class="text-3xl mt-5">Update Data Unit Satuan Berhasil!</div>
                                     <div class="text-gray-600 mt-2 update-sukses"></div>
                                 </div>
                             </div>
@@ -1065,9 +1050,9 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="x-circle" class="w-16 h-16 text-theme-24 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Apa kamu yakin ingin hapus data pegawai ini?</div>
+                                    <div class="text-3xl mt-5">Apa kamu yakin ingin hapus data unit satuan ini?</div>
                                     <div class="text-gray-600 mt-2">
-                                        Apa kamu yakin akan menghapus data pegawai ini?
+                                        Apa kamu yakin akan menghapus data unit satuan ini?
                                         <br>
                                         Data yang dihapus tidak akan bisa dikembalikan.
                                     </div>
@@ -1088,7 +1073,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Hapus Data Pegawai Berhasil!</div>
+                                    <div class="text-3xl mt-5">Hapus Data Unit Satuan Berhasil!</div>
                                     <div class="text-gray-600 mt-2 hapus-sukses"></div>
                                 </div>
                             </div>
@@ -1103,38 +1088,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Hapus Data Pegawai Gagal!</div>
+                                    <div class="text-3xl mt-5">Oops...Hapus Data Unit Satuan Gagal!</div>
                                     <div class="text-gray-600 mt-2 hapus-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Verifikasi Sukses Content -->
-                <div id="success-verifikasi-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Verifikasi Email Pegawai Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 verifikasi-sukses"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Verifikasi Gagal Content -->
-                <div id="warning-verifikasi-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Verifikasi akun pegawai gagal!</div>
-                                    <div class="text-gray-600 mt-2 verifikasi-gagal"></div>
                                 </div>
                             </div>
                         </div>
@@ -1180,9 +1135,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
                 // Hide Element
                 $('.codeblue').hide();
-                $('.khusus1').hide();
-                $('.khusus2').hide();
-                $('.btn-simpan').hide();
 
                 var url = '{{ env('BASE_URL') }}api/dashboard/home';
                 fetch(url, {
@@ -1206,16 +1158,6 @@ License: You must have a valid license purchased only from themeforest(the above
                     cash("#modal-create").modal("show");
                 });
 
-                // Akses Administrator Tambah Data
-                $(".frm-kode-rahasia").change(function() {
-                    var selectedValue = $(this).val();
-                    var compare = $('.codeblue').text();
-                    if(selectedValue == compare)
-                    {
-                        $('.btn-simpan').show();
-                    }
-                });
-
                 // Fungsi tombol simpan
                 $(".btn-simpan").click(function() {
                     // Show the modal
@@ -1223,22 +1165,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     // Get form data
                     var name = $(".frm-nama").val();
-                    var email = $(".frm-email").val();
-                    var password = $(".frm-password").val();
-                    var role_id = $(".frm-role_id").val();
+                    var satuan = $(".frm-satuan").val();
+                    var operator = $(".frm-operator").val();
+                    var value = $(".frm-nilai").val();
 
                     // Send data using Ajax
                     $.ajax({
-                        url: '{{ env('BASE_URL') }}api/master-employee/tambah/',
+                        url: '{{ env('BASE_URL') }}api/master-satuan/tambah/',
                         type: "POST",
                         beforeSend: function(xhr) {
                             xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                         },
                         data: {
                             name: name,
-                            email: email,
-                            password: password,
-                            role_id: role_id,
+                            satuan: satuan,
+                            operator: operator,
+                            value: value,
                         },
                         success: function(response) {
                             // Show the modal
@@ -1265,320 +1207,161 @@ License: You must have a valid license purchased only from themeforest(the above
                     });
                 });
 
-                // // Ambil Data Admin
-                // var url = '{{ env('BASE_URL') }}api/master-admin/list';
-                // fetch(url, {
-                //     method: 'GET',
-                //     headers: {
-                //         'Authorization': 'Bearer ' + token
-                //     }
-                // }).then(response => response.json()).then(data => {
-                //     // Panggil fungsi untuk mengisi data ke dalam tbody DataTable
-                //     populateDataTable(data);
-                // }).catch(error => {
-                //     console.error('Error:', error);
-                // });
+                // Ambil Data Admin
+                var url = '{{ env('BASE_URL') }}api/master-satuan/list';
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                }).then(response => response.json()).then(data => {
+                    // Panggil fungsi untuk mengisi data ke dalam tbody DataTable
+                    populateDataTable(data);
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
 
-                // function populateDataTable(data) {
-                //     var tableBody = $("#data-body");
+                function populateDataTable(data) {
+                    var tableBody = $("#data-body");
 
-                //     // Bersihkan isi tbody sebelum mengisi dengan data baru
-                //     tableBody.empty();
+                    // Bersihkan isi tbody sebelum mengisi dengan data baru
+                    tableBody.empty();
 
-                //     var rowDataArray = []; // Variabel untuk menyimpan objek baris
+                    var rowDataArray = []; // Variabel untuk menyimpan objek baris
 
-                //     // Perulangan menggunakan $.each()
-                //     $.each(data, function(index, item) {
-                //         for (let i = 0; i < item.length; i++) {
-                //             // // Create an object with the desired properties
-                //             var rowData = {
-                //                 id: item[i].id,
-                //                 nomer: item[i].nomer,
-                //                 name: item[i].name,
-                //                 email: item[i].email,
-                //                 role_id: item[i].role_id,
-                //                 roles: item[i].roles,
-                //             };
+                    // Perulangan menggunakan $.each()
+                    $.each(data, function(index, item) {
+                        for (let i = 0; i < item.length; i++) {
+                            // // Create an object with the desired properties
+                            var rowData = {
+                                id: item[i].id,
+                                name: item[i].name,
+                                satuan: item[i].satuan,
+                                operator: item[i].operator,
+                                value: item[i].value,
+                            };
 
-                //             // Push the object to the data array
-                //             rowDataArray.push(rowData);
-                //         }
-                //     });
-
-                //     var dataTable = $('#data-table').DataTable();
-                //     if (dataTable) {
-                //         // Destroy DataTable
-                //         dataTable.destroy();
-                //     }
-
-                //     // Initialize DataTable
-                //     var table = $('#data-table').DataTable({
-                //         data: rowDataArray,
-                //         columns: [
-                //             { data: 'nomer', className: ' border-b border-gray-600 text-center' },
-                //             { data: 'name', className: 'border-b border-gray-600 text-center' },
-                //             { data: 'email', className: 'border-b border-gray-600 text-center' },
-                //             { data: 'roles', className: 'border-b border-gray-600 text-center' },
-                //             {
-                //                 data: null,
-                //                 render: function (data, type, row) {
-
-                //                     // Create action buttons
-                //                     var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                //                     var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                //                     // Combine the buttons
-                //                     var actions = editBtn + '  ||  ' + deleteBtn;
-                //                     return actions;
-                //                 }
-                //             }
-                //         ],
-                //         "drawCallback": function( settings ) {
-                //             feather.replace();
-                //         },
-                //         "createdRow": function (row, data, dataIndex) {
-                //             // Add a custom class to each row
-                //             $(row).addClass('bg-gray-700 dark:bg-dark-1 text-white');
-                //         }
-                //     });
-
-                //     // Passing data list row ke dalam modal update
-                //     $('#data-table').on('click', '.btn-edit', function() {
-                //         cash("#modal-update").modal("show");
-                //         var id = $(this).attr("data-id");
-                //         var name = $(this).attr("data-name");
-                //         var email = $(this).attr("data-email");
-                //         var role_id = $(this).attr("data-role_id");
-
-                //         // Handle edit action
-                //         $('.update-id').val(id);
-                //         $('.update-nama').val(name);
-                //         $('.update-email').val(email);
-                //         $('.update-role_id').val(role_id);
-                //     });
-
-                //     // Fungsi Tombol hapus
-                //     $('#data-table').on('click', '.btn-delete', function() {
-                //         var id = $(this).attr("data-id");
-                //         cash("#delete-modal-preview").modal("show");
-                //         $('.hapus-btn').show();
-                //         $('.hapus-btn').click(function() {
-                //             // Ajax delete Api
-                //             $.ajax({
-                //                 url: '{{ env('BASE_URL') }}api/master-admin/hapus/' + id,
-                //                 type: 'DELETE',
-                //                 headers: {
-                //                     'Authorization': 'Bearer ' + token
-                //                 },
-                //                 success: function(response) {
-                //                         // Show the modal
-                //                         $('.hapus-sukses').text(response.message);
-                //                         cash("#success-hapus-modal-preview").modal("show");
-
-                //                         setTimeout(function() {
-                //                             cash("#success-hapus-modal-preview").modal("hide");
-
-                //                             location.reload();
-                //                         }, 3000); // 3000 milliseconds = 3 seconds
-                //                     },
-                //                     error: function(xhr, status, error) {
-                //                         // Show error alert
-                //                         $('.hapus-gagal').text(response.message);
-                //                         cash("#warning-hapus-modal-preview").modal("show");
-
-                //                         setTimeout(function() {
-                //                             cash("#warning-update-modal-preview").modal("hide");
-
-                //                             location.reload();
-                //                         }, 5000); // 3000 milliseconds = 3 seconds
-                //                     }
-                //             });
-                //         });
-                //     });
-                // }
-
-                // Get data employee with datatable Serverside
-                // Datatable list Cabang
-                $('#data-table').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": {
-                        "url": '{{ env('BASE_URL') }}api/master-employee/list',
-                        "dataType": "json",
-                        "type": "POST",
-                        "headers": {
-                            'Authorization': 'Bearer ' + token
+                            // Push the object to the data array
+                            rowDataArray.push(rowData);
                         }
-                    },
-                    "columns": [
-                        { data: 'id', className: ' border-b border-gray-600 text-center' },
-                        { data: 'name', className: 'border-b border-gray-600 text-center' },
-                        { data: 'email', className: 'border-b border-gray-600 text-center' },
-                        { data: 'roles', className: 'border-b border-gray-600 text-center' },
-                        {
-                            data: null,
-                            render: function (data, type, row) {
+                    });
 
-                                if(data.is_verifikasi == true)
-                                {
-                                    // Jika akun sudah diverifikasi
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
+                    var dataTable = $('#data-table').DataTable();
+                    if (dataTable) {
+                        // Destroy DataTable
+                        dataTable.destroy();
+                    }
+
+                    // Initialize DataTable
+                    var table = $('#data-table').DataTable({
+                        data: rowDataArray,
+                        columns: [
+                            { data: 'id', className: ' border-b border-gray-600 text-center' },
+                            { data: 'name', className: 'border-b border-gray-600 text-center' },
+                            { data: 'satuan', className: 'border-b border-gray-600 text-center' },
+                            { data: 'operator', className: 'border-b border-gray-600 text-center' },
+                            { data: 'value', className: 'border-b border-gray-600 text-center' },
+                            {
+                                data: null,
+                                render: function (data, type, row) {
+
+                                    // Create action buttons
+                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-satuan="' + data.satuan + '" data-operator="' + data.operator + '" data-value-nilai="' + data.value + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
                                     var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
 
                                     // Combine the buttons
                                     var actions = editBtn + '  ||  ' + deleteBtn;
                                     return actions;
-                                }else{
-                                    // Jika akun sudah diverifikasi
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                                    var verif = '<button class="btn btn-primary btn-verif" data-id="' + data.id + '"><i data-feather="mail" class="w-4 h-4"></i></button>';
-                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                                    // Combine the buttons
-                                    var actions = editBtn + '  ||  ' + verif + '  ||  ' + deleteBtn;
-                                    return actions;
                                 }
                             }
-                        }
-                    ],
-                    "drawCallback": function( settings ) {
-                        feather.replace();
-                    },
+                        ],
+                        "drawCallback": function( settings ) {
+                            feather.replace();
+                        },
                         "createdRow": function (row, data, dataIndex) {
-                        // Add a custom class to each row
-                        $(row).addClass('bg-gray-700 dark:bg-dark-1 text-white');
-                    }
-                });
+                            // Add a custom class to each row
+                            $(row).addClass('bg-gray-700 dark:bg-dark-1 text-white');
+                        }
+                    });
 
-                // Passing data list row ke dalam modal update
-                $('#data-table').on('click', '.btn-verif', function() {
-                    var compare = $('.role-akun').text();
-                    if(compare == 'Administrator')
-                    {
+                    // Passing data list row ke dalam modal update
+                    $('#data-table').on('click', '.btn-edit', function() {
+                        cash("#modal-update").modal("show");
                         var id = $(this).attr("data-id");
-                        // Ajax untuk verifikasi email
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-employee/verifikasi/' + id,
-                            type: 'GET',
-                            headers: {
-                                'Authorization': 'Bearer ' + token
-                            },
-                            success: function(response) {
-                                    // Show the modal
-                                    $('.verifikasi-sukses').text(response.message);
-                                    cash("#success-verifikasi-modal-preview").modal("show");
+                        var name = $(this).attr("data-name");
+                        var satuan = $(this).attr("data-satuan");
+                        var operator = $(this).attr("data-operator");
+                        var nilai = $(this).attr("data-value-nilai");
 
-                                    setTimeout(function() {
-                                        cash("#success-verifikasi-modal-preview").modal("hide");
+                        // Handle edit action
+                        $('.update-id').val(id);
+                        $('.update-nama').val(name);
+                        $('.update-satuan').val(satuan);
+                        $('.update-operator').val(operator);
+                        $('.update-value-nilai').val(nilai);
+                    });
 
-                                        location.reload();
-                                    }, 3000); // 3000 milliseconds = 3 seconds
+                    // Fungsi Tombol hapus
+                    $('#data-table').on('click', '.btn-delete', function() {
+                        var id = $(this).attr("data-id");
+                        cash("#delete-modal-preview").modal("show");
+                        $('.hapus-btn').show();
+                        $('.hapus-btn').click(function() {
+                            // Ajax delete Api
+                            $.ajax({
+                                url: '{{ env('BASE_URL') }}api/master-satuan/hapus/' + id,
+                                type: 'DELETE',
+                                headers: {
+                                    'Authorization': 'Bearer ' + token
                                 },
-                                error: function(xhr, status, error) {
-                                    // Show error alert
-                                    $('.verifikasi-gagal').text(response.message);
-                                    cash("#warning-verifikasi-modal-preview").modal("show");
+                                success: function(response) {
+                                        // Show the modal
+                                        $('.hapus-sukses').text(response.message);
+                                        cash("#success-hapus-modal-preview").modal("show");
 
-                                    setTimeout(function() {
-                                        cash("#warning-verifikasi-modal-preview").modal("hide");
+                                        setTimeout(function() {
+                                            cash("#success-hapus-modal-preview").modal("hide");
 
-                                        location.reload();
-                                    }, 5000); // 3000 milliseconds = 3 seconds
-                                }
-                        });
-                    }else{
-                        alert("Anda tidak memiliki akses ini, akses ditolak!");
+                                            location.reload();
+                                        }, 3000); // 3000 milliseconds = 3 seconds
+                                    },
+                                    error: function(xhr, status, error) {
+                                        // Show error alert
+                                        $('.hapus-gagal').text(response.message);
+                                        cash("#warning-hapus-modal-preview").modal("show");
 
-                        window.location.href = "{{ route('login') }}";
-                    }
-                });
+                                        setTimeout(function() {
+                                            cash("#warning-update-modal-preview").modal("hide");
 
-                // Passing data list row ke dalam modal update
-                $('#data-table').on('click', '.btn-edit', function() {
-                    cash("#modal-update").modal("show");
-                    var id = $(this).attr("data-id");
-                    var name = $(this).attr("data-name");
-                    var email = $(this).attr("data-email");
-                    var role_id = $(this).attr("data-role_id");
-
-                    // Handle edit action
-                    $('.update-id').val(id);
-                    $('.update-nama').val(name);
-                    $('.update-email').val(email);
-                    $('.update-role_id').val(role_id);
-                });
-
-                // Fungsi Tombol hapus
-                $('#data-table').on('click', '.btn-delete', function() {
-                    var id = $(this).attr("data-id");
-                    cash("#delete-modal-preview").modal("show");
-                    $('.hapus-btn').show();
-                    $('.hapus-btn').click(function() {
-                        // Ajax delete Api
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-employee/hapus/' + id,
-                            type: 'DELETE',
-                            headers: {
-                                'Authorization': 'Bearer ' + token
-                            },
-                            success: function(response) {
-                                    // Show the modal
-                                    $('.hapus-sukses').text(response.message);
-                                    cash("#success-hapus-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#success-hapus-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 3000); // 3000 milliseconds = 3 seconds
-                                },
-                                error: function(xhr, status, error) {
-                                    // Show error alert
-                                    $('.hapus-gagal').text(response.message);
-                                    cash("#warning-hapus-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-update-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 3000 milliseconds = 3 seconds
-                                }
+                                            location.reload();
+                                        }, 5000); // 3000 milliseconds = 3 seconds
+                                    }
+                            });
                         });
                     });
-                });
-
-                // Akses Administrator
-                $(".update-kode-rahasia").change(function() {
-                    var selectedValue = $(this).val();
-                    var compare = $('.codeblue').text();
-                    if(selectedValue == compare)
-                    {
-                        $('.khusus1').show();
-                        $('.khusus2').show();
-                    }
-                });
+                }
 
                 // Tombol Update Admin
                 $(".btn-update").click(function() {
                     // Ajax update
                     var id = $('.update-id').val();
                     var name = $('.update-nama').val();
-                    var email = $('.update-email').val();
-                    var password = $('.update-password').val();
-                    var role_id = $('.update-role_id').val();
+                    var satuan = $('.update-satuan').val();
+                    var operator = $('.update-operator').val();
+                    var value = $('.update-value-nilai').val();
 
                     // Kirim permintaan pembaruan produk ke API
                     $.ajax({
-                        url: '{{ env('BASE_URL') }}api/master-employee/update/' + id,
+                        url: '{{ env('BASE_URL') }}api/master-satuan/update/' + id,
                         type: "PUT",
                         beforeSend: function(xhr) {
                             xhr.setRequestHeader('Authorization', 'Bearer ' + token);
                         },
                         data: {
                             name: name,
-                            email: email,
-                            password: password,
-                            role_id: role_id,
+                            satuan: satuan,
+                            operator: operator,
+                            value: value,
                         },
                         success: function(response) {
                             // Show the modal

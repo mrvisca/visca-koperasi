@@ -112,7 +112,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="menu menu--active">
+                            <a href="{{ route('unitsatuan') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-feather="command"></i> </div>
                                 <div class="menu__title"> Satuan Produk </div>
                             </a>
@@ -545,7 +545,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="side-menu">
+                                    <a href="{{ route('unitsatuan') }}" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="command"></i> </div>
                                         <div class="side-menu__title"> Satuan Produk </div>
                                     </a>

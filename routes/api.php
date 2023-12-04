@@ -4,6 +4,7 @@ use App\Http\Controllers\Secret\DashboardController;
 use App\Http\Controllers\Secret\AutentikasiController;
 use App\Http\Controllers\Secret\EmployeeController;
 use App\Http\Controllers\Secret\MasteradminController;
+use App\Http\Controllers\Secret\UnitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,16 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get("/verifikasi/{id}", [EmployeeController::class, 'verify']);
         Route::put("/update/{id}", [EmployeeController::class, 'updatePegawai']);
         Route::delete("/hapus/{id}", [EmployeeController::class, 'hapus']);
+    });
+
+    Route::prefix('master-satuan')->group(function () {
+        Route::get("/list", [UnitController::class, 'listSatuan']);
+        Route::post("/tambah", [UnitController::class, 'tambahSatuan']);
+        Route::put("/update/{id}", [UnitController::class, 'update']);
+        Route::delete("/hapus/{id}", [UnitController::class, 'hapus']);
+        // Route::get("/verifikasi/{id}", [EmployeeController::class, 'verify']);
+        // Route::put("/update/{id}", [EmployeeController::class, 'updatePegawai']);
+        // Route::delete("/hapus/{id}", [EmployeeController::class, 'hapus']);
     });
 });
 
