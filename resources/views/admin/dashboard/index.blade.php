@@ -106,7 +106,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="menu menu--active">
+                            <a href="{{ route('produkkategori') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="menu__title"> Kategori Produk </div>
                             </a>
@@ -539,7 +539,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="side-menu">
+                                    <a href="{{ route('produkkategori') }}" class="side-menu">
                                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                         <div class="side-menu__title"> Kategori Produk </div>
                                     </a>
