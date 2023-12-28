@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="description" content="Icewall admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
-        <title>Visca Koperasi - Master Admin</title>
+        <title>Visca Koperasi - Master Produk</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
         <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -870,7 +870,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="content">
                     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
                         <h2 class="text-lg font-medium mr-auto">
-                            List Master Admin
+                            List Master Produk
                         </h2>
                         <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
                             <button class="btn btn-primary shadow-md mr-2 tambah-admin">Tambah Data</button>
@@ -884,8 +884,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <tr class="bg-gray-700 dark:bg-dark-1 text-white">
                                         <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">ID</th>
                                         <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Nama</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Email</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Role</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Variant</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Kode</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Photo</th>
+                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Harga</th>
                                         <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Aksi</th>
                                     </tr>
                                 </thead>
@@ -904,7 +906,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Header -->
                             <div class="modal-header">
                                 <h2 class="font-medium text-base mr-auto">
-                                    Form Tambah Pegawai
+                                    Form Tambah Produk
                                 </h2>
                                 <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             </div>
@@ -912,21 +914,37 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Body -->
                             <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama</label>
-                                    <input type="text" class="form-control frm-nama" placeholder="Jhon Doe" required>
+                                    <label for="modal-form-1" class="form-label">Nama Produk</label>
+                                    <input type="text" class="form-control frm-nama" placeholder="Sosis Kenzler" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control frm-email" placeholder="jhon@mail.com" required>
+                                    <label for="fileInput" class="form-label">Variant</label>
+                                    <input type="text" class="form-control frm-variant" placeholder="Daging Kebo" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Password</label>
-                                    <input type="password" class="form-control frm-password" placeholder="******" required>
+                                    <label for="modal-form-2" class="form-label">Kode Produk</label>
+                                    <input type="text" class="form-control frm-kode-produk" placeholder="071095951007" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Role</label>
-                                    <select class="form-select frm-role_id" required>
-                                        <option disabled selected> --- Pilih Role Akun --- </option>
+                                    <label for="modal-form-2" class="form-label">Batas Kadaluarsa</label>
+                                    <input type="text" class="form-control frm-expired" placeholder="071095951007" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Stock Produk</label>
+                                    <input type="number" class="form-control frm-stock" placeholder="071095951007" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Harga Modal</label>
+                                    <input type="number" class="form-control frm-modal" placeholder="071095951007" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Harga Jual</label>
+                                    <input type="number" class="form-control frm-harga_jual" placeholder="071095951007" required>
+                                </div>
+                                <div class="col-span-12 sm:col-span-12">
+                                    <label for="modal-form-2" class="form-label">Satuan Beli</label>
+                                    <select id="satuan" class="form-select frm-satuan-jual" required>
+                                        <option disabled selected> --- Pilih Satuan Pembelian --- </option>
                                         <option value="2"> Customer Service </option>
                                         <option value="3"> Dept Collection </option>
                                     </select>
@@ -1265,145 +1283,12 @@ License: You must have a valid license purchased only from themeforest(the above
                     });
                 });
 
-                // // Ambil Data Admin
-                // var url = '{{ env('BASE_URL') }}api/master-admin/list';
-                // fetch(url, {
-                //     method: 'GET',
-                //     headers: {
-                //         'Authorization': 'Bearer ' + token
-                //     }
-                // }).then(response => response.json()).then(data => {
-                //     // Panggil fungsi untuk mengisi data ke dalam tbody DataTable
-                //     populateDataTable(data);
-                // }).catch(error => {
-                //     console.error('Error:', error);
-                // });
-
-                // function populateDataTable(data) {
-                //     var tableBody = $("#data-body");
-
-                //     // Bersihkan isi tbody sebelum mengisi dengan data baru
-                //     tableBody.empty();
-
-                //     var rowDataArray = []; // Variabel untuk menyimpan objek baris
-
-                //     // Perulangan menggunakan $.each()
-                //     $.each(data, function(index, item) {
-                //         for (let i = 0; i < item.length; i++) {
-                //             // // Create an object with the desired properties
-                //             var rowData = {
-                //                 id: item[i].id,
-                //                 nomer: item[i].nomer,
-                //                 name: item[i].name,
-                //                 email: item[i].email,
-                //                 role_id: item[i].role_id,
-                //                 roles: item[i].roles,
-                //             };
-
-                //             // Push the object to the data array
-                //             rowDataArray.push(rowData);
-                //         }
-                //     });
-
-                //     var dataTable = $('#data-table').DataTable();
-                //     if (dataTable) {
-                //         // Destroy DataTable
-                //         dataTable.destroy();
-                //     }
-
-                //     // Initialize DataTable
-                //     var table = $('#data-table').DataTable({
-                //         data: rowDataArray,
-                //         columns: [
-                //             { data: 'nomer', className: ' border-b border-gray-600 text-center' },
-                //             { data: 'name', className: 'border-b border-gray-600 text-center' },
-                //             { data: 'email', className: 'border-b border-gray-600 text-center' },
-                //             { data: 'roles', className: 'border-b border-gray-600 text-center' },
-                //             {
-                //                 data: null,
-                //                 render: function (data, type, row) {
-
-                //                     // Create action buttons
-                //                     var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                //                     var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                //                     // Combine the buttons
-                //                     var actions = editBtn + '  ||  ' + deleteBtn;
-                //                     return actions;
-                //                 }
-                //             }
-                //         ],
-                //         "drawCallback": function( settings ) {
-                //             feather.replace();
-                //         },
-                //         "createdRow": function (row, data, dataIndex) {
-                //             // Add a custom class to each row
-                //             $(row).addClass('bg-gray-700 dark:bg-dark-1 text-white');
-                //         }
-                //     });
-
-                //     // Passing data list row ke dalam modal update
-                //     $('#data-table').on('click', '.btn-edit', function() {
-                //         cash("#modal-update").modal("show");
-                //         var id = $(this).attr("data-id");
-                //         var name = $(this).attr("data-name");
-                //         var email = $(this).attr("data-email");
-                //         var role_id = $(this).attr("data-role_id");
-
-                //         // Handle edit action
-                //         $('.update-id').val(id);
-                //         $('.update-nama').val(name);
-                //         $('.update-email').val(email);
-                //         $('.update-role_id').val(role_id);
-                //     });
-
-                //     // Fungsi Tombol hapus
-                //     $('#data-table').on('click', '.btn-delete', function() {
-                //         var id = $(this).attr("data-id");
-                //         cash("#delete-modal-preview").modal("show");
-                //         $('.hapus-btn').show();
-                //         $('.hapus-btn').click(function() {
-                //             // Ajax delete Api
-                //             $.ajax({
-                //                 url: '{{ env('BASE_URL') }}api/master-admin/hapus/' + id,
-                //                 type: 'DELETE',
-                //                 headers: {
-                //                     'Authorization': 'Bearer ' + token
-                //                 },
-                //                 success: function(response) {
-                //                         // Show the modal
-                //                         $('.hapus-sukses').text(response.message);
-                //                         cash("#success-hapus-modal-preview").modal("show");
-
-                //                         setTimeout(function() {
-                //                             cash("#success-hapus-modal-preview").modal("hide");
-
-                //                             location.reload();
-                //                         }, 3000); // 3000 milliseconds = 3 seconds
-                //                     },
-                //                     error: function(xhr, status, error) {
-                //                         // Show error alert
-                //                         $('.hapus-gagal').text(response.message);
-                //                         cash("#warning-hapus-modal-preview").modal("show");
-
-                //                         setTimeout(function() {
-                //                             cash("#warning-update-modal-preview").modal("hide");
-
-                //                             location.reload();
-                //                         }, 5000); // 3000 milliseconds = 3 seconds
-                //                     }
-                //             });
-                //         });
-                //     });
-                // }
-
-                // Get data employee with datatable Serverside
-                // Datatable list Cabang
+                // Get data produk dengan datatable serverside
                 $('#data-table').DataTable({
                     "processing": true,
                     "serverSide": true,
                     "ajax": {
-                        "url": '{{ env('BASE_URL') }}api/master-employee/list',
+                        "url": '{{ env('BASE_URL') }}api/master-produk/list',
                         "dataType": "json",
                         "type": "POST",
                         "headers": {
@@ -1412,32 +1297,32 @@ License: You must have a valid license purchased only from themeforest(the above
                     },
                     "columns": [
                         { data: 'id', className: ' border-b border-gray-600 text-center' },
-                        { data: 'name', className: 'border-b border-gray-600 text-center' },
-                        { data: 'email', className: 'border-b border-gray-600 text-center' },
-                        { data: 'roles', className: 'border-b border-gray-600 text-center' },
+                        { data: 'nama', className: 'border-b border-gray-600 text-center' },
+                        { data: 'variant', className: 'border-b border-gray-600 text-center' },
+                        { data: 'kode', className: 'border-b border-gray-600 text-center' },
+                        {
+                            data: 'foto',
+                            className: 'border-b border-gray-600 text-center',
+                            render: function (data, type, row) {
+                                if (data && data.foto) {
+                                    return '<img src="' + data.foto + '" alt="Gambar" width="50" data-action="zoom" class="w-full rounded-md">';
+                                } else {
+                                    return ''; // Atau tampilkan placeholder gambar kosong jika 'foto' tidak ada
+                                }
+                            }
+                        },
+                        { data: 'harga_jual', className: 'border-b border-gray-600 text-center' },
                         {
                             data: null,
                             render: function (data, type, row) {
 
-                                if(data.is_verifikasi == true)
-                                {
-                                    // Jika akun sudah diverifikasi
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
+                                // Jika akun sudah diverifikasi
+                                var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
+                                var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
 
-                                    // Combine the buttons
-                                    var actions = editBtn + '  ||  ' + deleteBtn;
-                                    return actions;
-                                }else{
-                                    // Jika akun sudah diverifikasi
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                                    var verif = '<button class="btn btn-primary btn-verif" data-id="' + data.id + '"><i data-feather="mail" class="w-4 h-4"></i></button>';
-                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                                    // Combine the buttons
-                                    var actions = editBtn + '  ||  ' + verif + '  ||  ' + deleteBtn;
-                                    return actions;
-                                }
+                                // Combine the buttons
+                                var actions = editBtn + '  ||  ' + deleteBtn;
+                                return actions;
                             }
                         }
                     ],

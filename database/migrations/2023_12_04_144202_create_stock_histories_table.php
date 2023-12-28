@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('tipe',['pengurangan','penambahan','penyesuaian']);
             $table->bigInteger('modal_lama');
             $table->bigInteger('modal_baru');
-            $table->bigInteger('rata-rata');
+            $table->bigInteger('rata_rata');
             $table->string('keterangan');
             $table->bigInteger('user_id');
             $table->timestamps();

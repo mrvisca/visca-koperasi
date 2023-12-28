@@ -5,6 +5,7 @@ use App\Http\Controllers\Secret\AutentikasiController;
 use App\Http\Controllers\Secret\EmployeeController;
 use App\Http\Controllers\Secret\KategoriController;
 use App\Http\Controllers\Secret\MasteradminController;
+use App\Http\Controllers\Secret\ProductController;
 use App\Http\Controllers\Secret\UnitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -61,9 +62,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post("/tambah-data", [KategoriController::class, 'tambahKategori']);
         Route::put("/update-data/{id}", [KategoriController::class, 'updateData']);
         Route::delete("/hapus-data/{id}", [KategoriController::class, 'hapus']);
-        // Route::post("/tambah", [UnitController::class, 'tambahSatuan']);
-        // Route::put("/update/{id}", [UnitController::class, 'update']);
-        // Route::delete("/hapus/{id}", [UnitController::class, 'hapus']);
+    });
+
+    Route::prefix('master-produk')->group(function () {
+        Route::post("/list", [ProductController::class, 'listProduct']);
+        Route::post("/tambah-produk", [ProductController::class, 'tambahProduct']);
+        // Route::post("/tambah-data", [KategoriController::class, 'tambahKategori']);
+        // Route::put("/update-data/{id}", [KategoriController::class, 'updateData']);
+        // Route::delete("/hapus-data/{id}", [KategoriController::class, 'hapus']);
     });
 });
 
