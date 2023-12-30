@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('kode');
             $table->string('expired');
             $table->integer('stock');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->bigInteger('modal');
             $table->bigInteger('harga_jual');
             $table->bigInteger('satuan_beli');
