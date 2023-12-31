@@ -6,6 +6,7 @@ use App\Http\Controllers\Secret\EmployeeController;
 use App\Http\Controllers\Secret\KategoriController;
 use App\Http\Controllers\Secret\MasteradminController;
 use App\Http\Controllers\Secret\ProductController;
+use App\Http\Controllers\Secret\StockistController;
 use App\Http\Controllers\Secret\UnitController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,4 @@ Route::get('/aplikasi/master-employee',[EmployeeController::class, 'index'])->na
 Route::get('/aplikasi/master-satuan',[UnitController::class, 'index'])->name('unitsatuan');
 Route::get('/aplikasi/master-kategori-produk',[KategoriController::class, 'index'])->name('produkkategori');
 Route::get('/aplikasi/master-produk',[ProductController::class, 'index'])->name('masterproduk');
+Route::get('/aplikasi/master-stockist',[StockistController::class, 'index'])->name('masterstockist');

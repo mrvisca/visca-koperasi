@@ -213,7 +213,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="menu">
+                    <a href="{{ route('masterstockist') }}" class="menu">
                         <div class="menu__icon"> <i data-feather="package"></i> </div>
                         <div class="menu__title"> Stockist Koperasi </div>
                     </a>
@@ -664,7 +664,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="side-menu">
+                            <a href="{{ route('masterstockist') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="package"></i> </div>
                                 <div class="side-menu__title">
                                     Stockist Koperasi

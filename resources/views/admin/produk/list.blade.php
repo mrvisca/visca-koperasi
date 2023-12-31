@@ -213,7 +213,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="menu">
+                    <a href="{{ route('masterstockist') }}" class="menu">
                         <div class="menu__icon"> <i data-feather="package"></i> </div>
                         <div class="menu__title"> Stockist Koperasi </div>
                     </a>
@@ -389,7 +389,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->
-                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Master Admin</a> </div>
+                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Master Produk</a> </div>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Notifications -->
                 <div class="intro-x dropdown mr-4 sm:mr-6">
@@ -664,7 +664,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="side-menu">
+                            <a href="{{ route('masterstockist') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="package"></i> </div>
                                 <div class="side-menu__title">
                                     Stockist Koperasi
@@ -1239,11 +1239,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 } else {
                     window.location.href = "{{ route('login') }}";
                 }
-
-                // Hide Element
-                $('.codeblue').hide();
-                $('.khusus1').hide();
-                $('.khusus2').hide();
 
                 var url = '{{ env('BASE_URL') }}api/dashboard/home';
                 fetch(url, {

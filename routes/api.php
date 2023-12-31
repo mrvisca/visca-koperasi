@@ -6,6 +6,7 @@ use App\Http\Controllers\Secret\EmployeeController;
 use App\Http\Controllers\Secret\KategoriController;
 use App\Http\Controllers\Secret\MasteradminController;
 use App\Http\Controllers\Secret\ProductController;
+use App\Http\Controllers\Secret\StockistController;
 use App\Http\Controllers\Secret\UnitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -71,6 +72,16 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::delete("/hapus-produk/{id}", [ProductController::class, 'hapusProduct']);
         Route::get("/list-support/kategori", [ProductController::class, 'listCategory']);
         Route::get("/list-support/satuan", [ProductController::class, 'listSatuan']);
+    });
+
+    Route::prefix('stockist')->group(function () {
+        Route::post("/list", [StockistController::class, 'stockList']);
+        Route::get("/export-xls", [StockistController::class, 'export']);
+        // Route::post("/tambah-produk", [ProductController::class, 'tambahProduct']);
+        // Route::post("/update-produk", [ProductController::class, 'update']);
+        // Route::delete("/hapus-produk/{id}", [ProductController::class, 'hapusProduct']);
+        // Route::get("/list-support/kategori", [ProductController::class, 'listCategory']);
+        // Route::get("/list-support/satuan", [ProductController::class, 'listSatuan']);
     });
 });
 
