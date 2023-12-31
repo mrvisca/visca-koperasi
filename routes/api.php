@@ -67,9 +67,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('master-produk')->group(function () {
         Route::post("/list", [ProductController::class, 'listProduct']);
         Route::post("/tambah-produk", [ProductController::class, 'tambahProduct']);
-        // Route::post("/tambah-data", [KategoriController::class, 'tambahKategori']);
-        // Route::put("/update-data/{id}", [KategoriController::class, 'updateData']);
-        // Route::delete("/hapus-data/{id}", [KategoriController::class, 'hapus']);
+        Route::post("/update-produk", [ProductController::class, 'update']);
+        Route::delete("/hapus-produk/{id}", [ProductController::class, 'hapusProduct']);
+        Route::get("/list-support/kategori", [ProductController::class, 'listCategory']);
+        Route::get("/list-support/satuan", [ProductController::class, 'listSatuan']);
     });
 });
 

@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Secret;
 
+use App\Models\Unit;
 use App\Http\Controllers\Controller;
+use App\Models\Kategori;
 use App\Models\Product;
 use App\Models\StockHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -48,6 +51,13 @@ class ProductController extends Controller
             $item['kode'] = $p->kode;
             $item['foto'] = asset('storage/'.$p->foto);
             $item['harga_jual'] = $p->harga_jual;
+            $item['category_id'] = $p->category_id;
+            $item['expired'] = $p->expired;
+            $item['stock'] = $p->stock;
+            $item['modal'] = $p->modal;
+            $item['satuan_jual'] = $p->satuan_jual;
+            $item['satuan_beli'] = $p->satuan_beli;
+            $item['deskripsi'] = $p->deskripsi;
             $data[] = $item;
         }
 
@@ -63,6 +73,7 @@ class ProductController extends Controller
     {
         //set validation
         $validator = Validator::make($request->all(), [
+            'category_id' => 'required',
             'nama'   => 'required',
             'variant' => 'required',
             'kode' => 'required',
@@ -81,23 +92,18 @@ class ProductController extends Controller
         }
 
         if ($request->hasFile('foto')) {
-            $gambar = $request->file('gambar');
+            // Fungsi upload foto
+            $gambar = $request->file('foto');
             $nama_gambar = time() . '.' . $gambar->getClientOriginalExtension();
 
             // Menggunakan Image Manager untuk membuat objek gambar
             $img = Image::make($gambar);
 
             // Mengompres gambar dengan kualitas bagus dan target ukuran di bawah 100KB
-            $img->encode('jpg', 90); // Ubah format dan kualitas kompresi di sini
+            $img->encode('jpg', 70); // Ubah format dan kualitas kompresi di sini
 
             // Mendapatkan ukuran file setelah kompresi
             $fileSize = $img->filesize();
-
-            // Loop untuk terus mengurangi kualitas sampai ukuran file di bawah 100KB
-            while ($fileSize > 100 * 1024) { // 100 KB dalam byte
-                $img->encode('jpg', $img->quality() - 5);
-                $fileSize = $img->filesize();
-            }
 
             // Simpan gambar ke direktori penyimpanan
             $path = storage_path("app/public/produk/{$nama_gambar}");
@@ -105,6 +111,7 @@ class ProductController extends Controller
 
             // Masukan data produk ke database
             $produk = new Product();
+            $produk->category_id = $request->category_id;
             $produk->nama = $request->nama;
             $produk->variant = $request->variant;
             $produk->kode = $request->kode;
@@ -115,7 +122,7 @@ class ProductController extends Controller
             $produk->harga_jual = $request->harga_jual;
             $produk->satuan_beli = $request->satuan_beli;
             $produk->satuan_jual = $request->satuan_jual;
-            $produk->deksirpsi = $request->deskripsi;
+            $produk->deskripsi = $request->deskripsi;
             $produk->save();
 
             // Buat riwayat stock
@@ -139,6 +146,7 @@ class ProductController extends Controller
         }else{
             // Masukan data produk ke database
             $produk = new Product();
+            $produk->category_id = $request->category_id;
             $produk->nama = $request->nama;
             $produk->variant = $request->variant;
             $produk->kode = $request->kode;
@@ -171,4 +179,144 @@ class ProductController extends Controller
             ],201);
         }
     }
+
+    public function listSatuan()
+    {
+        $satuan = Unit::orderby('id','desc')->get();
+        $data = array();
+        foreach($satuan as $s)
+        {
+            $item['id'] = $s->id;
+            $item['name'] = $s->name;
+            $data[] = $item;
+        }
+
+        return response()->json([
+            'data' => $data,
+        ],200);
+    }
+
+    public function listCategory()
+    {
+        $kategori = Kategori::orderby('id','desc')->get();
+        $data = array();
+        foreach($kategori as $k)
+        {
+            $item['id'] = $k->id;
+            $item['name'] = $k->name;
+            $data[] = $item;
+        }
+
+        return response()->json([
+            'data' => $data,
+        ],200);
+    }
+
+    public function update(Request $request)
+    {
+        $cari = Product::where('id',$request->id)->first();
+        if(!$cari)
+        {
+            return response()->json([
+                'success' => false,
+                'message' => 'Update produk gagal! data produk tidak ditemukan',
+            ],400);
+        }else{
+            if ($request->hasFile('foto')) {
+                // Cek apakah gambar sudah ada, jika iya, hapus gambar yang sudah ada
+                if ($cari->foto != null) {
+                    Storage::disk('local')->delete('public/'.$cari->foto);
+                }
+
+                // Fungsi upload foto
+                $gambar = $request->file('foto');
+                $nama_gambar = time() . '.' . $gambar->getClientOriginalExtension();
+
+                // Menggunakan Image Manager untuk membuat objek gambar
+                $img = Image::make($gambar);
+
+                // Mengompres gambar dengan kualitas bagus dan target ukuran di bawah 100KB
+                $img->encode('jpg', 70); // Ubah format dan kualitas kompresi di sini
+
+                // Mendapatkan ukuran file setelah kompresi
+                $fileSize = $img->filesize();
+
+                // Simpan gambar ke direktori penyimpanan
+                $path = storage_path("app/public/produk/{$nama_gambar}");
+                $img->save($path);
+
+                // Update Produk
+                $cari->category_id = $request->category_id;
+                $cari->nama = $request->nama;
+                $cari->variant = $request->variant;
+                $cari->kode = $request->kode;
+                $cari->expired = $request->expired;
+                $cari->modal = $request->modal;
+                $cari->harga_jual = $request->harga_jual;
+                $cari->satuan_beli = $request->satuan_beli;
+                $cari->satuan_jual = $request->satuan_jual;
+                $cari->deskripsi = $request->deskripsi;
+                $cari->foto = 'produk/' . $nama_gambar;
+                $cari->save();
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Berhasil melakukan update produk',
+                ],201);
+            }else{
+                // Update Produk
+                $cari->category_id = $request->category_id;
+                $cari->nama = $request->nama;
+                $cari->variant = $request->variant;
+                $cari->kode = $request->kode;
+                $cari->expired = $request->expired;
+                $cari->modal = $request->modal;
+                $cari->harga_jual = $request->harga_jual;
+                $cari->satuan_beli = $request->satuan_beli;
+                $cari->satuan_jual = $request->satuan_jual;
+                $cari->deskripsi = $request->deskripsi;
+                $cari->save();
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Berhasil melakukan update produk',
+                ],201);
+            }
+        }
+    }
+
+    public function hapusProduct($id)
+    {
+        $cari = Product::where('id',$id)->first();
+        if(!$cari)
+        {
+            return response()->json([
+                'success' => false,
+                'message' => 'Hapus produk gagal! data produk tidak ditemukan',
+            ],400);
+        }else{
+            // Cek apakah gambar sudah ada, jika iya, hapus gambar yang sudah ada
+            if ($cari->foto != null) {
+                Storage::disk('local')->delete('public/'.$cari->foto);
+            }
+
+            // Hapus Riwayat Stock
+            $hapus_riwayat = StockHistory::where('product_id',$cari->id)->delete();
+            $hapus_produk = Product::where('id',$id)->delete();
+
+            if($hapus_riwayat && $hapus_produk)
+            {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Hapus data produk berhasil',
+                ],201);
+            }else{
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Terjadi kesalahan saat hapus data produk!',
+                ],400);
+            }
+        }
+    }
+
 }
