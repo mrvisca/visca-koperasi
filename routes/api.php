@@ -8,7 +8,6 @@ use App\Http\Controllers\Secret\MasteradminController;
 use App\Http\Controllers\Secret\ProductController;
 use App\Http\Controllers\Secret\StockistController;
 use App\Http\Controllers\Secret\UnitController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,7 +75,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('stockist')->group(function () {
         Route::post("/list", [StockistController::class, 'stockList']);
+        Route::post("/penyesuian-stock", [StockistController::class, 'penyesuaianStock']);
+        Route::get("/support/product", [StockistController::class, 'supportProduct']);
+        Route::get("/support/product-detail/{id}", [StockistController::class, 'productDetail']);
         Route::get("/export-xls", [StockistController::class, 'export']);
+        Route::get("/template-opname", [StockistController::class, 'template']);
+        Route::post("/import-opname", [StockistController::class, 'importOpname']);
         // Route::post("/tambah-produk", [ProductController::class, 'tambahProduct']);
         // Route::post("/update-produk", [ProductController::class, 'update']);
         // Route::delete("/hapus-produk/{id}", [ProductController::class, 'hapusProduct']);

@@ -880,8 +880,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </button>
                                 <div class="dropdown-menu w-40">
                                     <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-                                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="file-plus" class="w-4 h-4 mr-2"></i> New Category </a>
-                                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="users" class="w-4 h-4 mr-2"></i> New Group </a>
+                                        <a href="#" class="flex items-center block p-2 bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md btn-penyesuaian"> <i data-feather="package" class="w-4 h-4 mr-2"></i> Penyesuaian </a>
+                                        <a href="#" class="flex items-center block p-2 bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md btn-opname"> <i data-feather="clipboard" class="w-4 h-4 mr-2"></i> Opname </a>
                                     </div>
                                 </div>
                             </div>
@@ -919,7 +919,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Header -->
                             <div class="modal-header">
                                 <h2 class="font-medium text-base mr-auto">
-                                    Form Tambah Produk
+                                    Form Penyesuaian Produk
                                 </h2>
                                 <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             </div>
@@ -927,58 +927,26 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Body -->
                             <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Kategori</label>
-                                    <select id="kategori" class="form-select frm-category_id" required>
-                                        <option disabled selected> --- Pilih Kategori --- </option>
+                                    <label for="modal-form-2" class="form-label">Produk</label>
+                                    <select id="produk" class="form-select dta-product_id" required>
+                                        <option disabled selected> --- Pilih Produk --- </option>
                                     </select>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama Produk</label>
-                                    <input type="text" class="form-control frm-nama" placeholder="Sosis Kenzler" required>
+                                    <label for="modal-form-1" class="form-label">Stock Lama</label>
+                                    <input type="text" class="form-control dta-stock-lama" placeholder="Stock Produk Lama" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Variant</label>
-                                    <input type="text" class="form-control frm-variant" placeholder="Daging Kebo" required>
+                                    <label for="fileInput" class="form-label">Real Stock</label>
+                                    <input type="text" class="form-control dta-stock-baru" placeholder="Stock Real" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Kode Produk</label>
-                                    <input type="text" class="form-control frm-kode-produk" placeholder="071095951007" required>
+                                    <label for="modal-form-2" class="form-label">Modal Lama</label>
+                                    <input type="text" class="form-control dta-modal-lama" placeholder="Harga Modal Lama" required>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Batas Kadaluarsa</label>
-                                    <input type="text" class="form-control frm-expired" placeholder="2023-12-31" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Stock Produk</label>
-                                    <input type="number" class="form-control frm-stock" placeholder="50" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Harga Modal</label>
-                                    <input type="number" class="form-control frm-modal" placeholder="10000" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Harga Jual</label>
-                                    <input type="number" class="form-control frm-harga_jual" placeholder="15000" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Satuan Beli</label>
-                                    <select id="satuan-beli" class="form-select frm-satuan-beli" required>
-                                        <option disabled selected> --- Pilih Satuan Pembelian --- </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Satuan Jual</label>
-                                    <select id="satuan-jual" class="form-select frm-satuan-jual" required>
-                                        <option disabled selected> --- Pilih Satuan Penjualan --- </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Deskripsi</label>
-                                    <textarea id="update-profile-form-5" class="form-control frm-desc" placeholder="Jagung rebus, direbus dengan bahan asli" required></textarea>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Foto Produk</label>
-                                    <input type="file" class="form-control" id="fileInput" required>
+                                    <label for="modal-form-2" class="form-label">Modal Baru</label>
+                                    <input type="text" class="form-control dta-modal-baru" placeholder="Harga Modal baru" required>
                                 </div>
                             </div>
                             <!-- END: Modal Body -->
@@ -999,7 +967,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Tambah Data Produk Berhasil!</div>
+                                    <div class="text-3xl mt-5">Penyesuaian Stock Produk Berhasil!</div>
                                     <div class="text-gray-600 mt-2 pesan-sukses"></div>
                                 </div>
                             </div>
@@ -1014,7 +982,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Tambah Data Produk Gagal!</div>
+                                    <div class="text-3xl mt-5">Oops...Penyesuaian Stock Produk Gagal!</div>
                                     <div class="text-gray-600 mt-2 pesan-gagal"></div>
                                 </div>
                             </div>
@@ -1023,13 +991,13 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <!-- END: Modal Content -->
                 <!-- BEGIN: Modal Update Content -->
-                <div id="modal-update" class="modal" tabindex="-1" aria-hidden="true" role="dialog">
+                <div id="modal-opname" class="modal" tabindex="-1" aria-hidden="true" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <!-- BEGIN: Modal Header -->
                             <div class="modal-header">
                                 <h2 class="font-medium text-base mr-auto">
-                                    Form Update Produk
+                                    Form Import Stock Opname (Penambahan Stock)
                                 </h2>
                                 <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
                             </div>
@@ -1037,59 +1005,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN: Modal Body -->
                             <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                                 <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Kategori</label>
-                                    <input type="hidden" class="form-control updt-id" required>
-                                    <select id="kategori-updt" class="form-select updt-category_id" required>
-                                        <option disabled selected> --- Pilih Kategori --- </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama Produk</label>
-                                    <input type="text" class="form-control updt-nama" placeholder="Sosis Kenzler" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Variant</label>
-                                    <input type="text" class="form-control updt-variant" placeholder="Daging Kebo" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Kode Produk</label>
-                                    <input type="text" class="form-control updt-kode-produk" placeholder="071095951007" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Batas Kadaluarsa</label>
-                                    <input type="text" class="form-control updt-expired" placeholder="2023-12-31" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Stock Produk</label>
-                                    <input type="number" class="form-control updt-stock" placeholder="50" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Harga Modal</label>
-                                    <input type="number" class="form-control updt-modal" placeholder="10000" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Harga Jual</label>
-                                    <input type="number" class="form-control updt-harga_jual" placeholder="15000" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Satuan Beli</label>
-                                    <select id="satuan-beli-updt" class="form-select updt-satuan-beli" required>
-                                        <option disabled selected> --- Pilih Satuan Pembelian --- </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Satuan Jual</label>
-                                    <select id="satuan-jual-updt" class="form-select updt-satuan-jual" required>
-                                        <option disabled selected> --- Pilih Satuan Penjualan --- </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Deskripsi</label>
-                                    <textarea id="update-profile-form-5" class="form-control updt-desc" placeholder="Jagung rebus, direbus dengan bahan asli" required></textarea>
+                                    <label for="modal-form-2" class="form-label">Template Import</label>
+                                    <br/>
+                                    <button type="button" class="btn btn-secondary w-25 mr-1 mb-2 btn-template"> Unduh Disini </button>
                                 </div>
                                 <div class="col-span-12 sm:col-span-12">
                                     <label for="fileInput" class="form-label">Foto Produk</label>
-                                    <input type="file" class="form-control" id="fileInput1" required>
+                                    <input type="file" class="form-control" id="fileInput" required>
                                 </div>
                             </div>
                             <!-- END: Modal Body -->
@@ -1110,7 +1032,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Update Data Produk Berhasil!</div>
+                                    <div class="text-3xl mt-5">Import Stock Opname Berhasil!</div>
                                     <div class="text-gray-600 mt-2 update-sukses"></div>
                                 </div>
                             </div>
@@ -1125,91 +1047,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="modal-body p-0">
                                 <div class="p-5 text-center">
                                     <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Update Data Produk Gagal!</div>
+                                    <div class="text-3xl mt-5">Oops...Import Stock Opname Gagal!</div>
                                     <div class="text-gray-600 mt-2 update-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Delete Content -->
-                <div id="delete-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-24 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Apa kamu yakin ingin hapus data produk ini?</div>
-                                    <div class="text-gray-600 mt-2">
-                                        Apa kamu yakin akan menghapus data produk ini?
-                                        <br>
-                                        Data yang dihapus tidak akan bisa dikembalikan.
-                                    </div>
-                                </div>
-                                <div class="px-5 pb-8 text-center">
-                                    <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Batalkan</button>
-                                    <button type="button" class="btn btn-danger w-24 hapus-btn">Hapus</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Hapus Sukses Content -->
-                <div id="success-hapus-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Hapus Data Produk Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 hapus-sukses"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Hapus Gagal Content -->
-                <div id="warning-hapus-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Hapus Data Produk Gagal!</div>
-                                    <div class="text-gray-600 mt-2 hapus-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Verifikasi Sukses Content -->
-                <div id="success-verifikasi-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Verifikasi Email Pegawai Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 verifikasi-sukses"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Verifikasi Gagal Content -->
-                <div id="warning-verifikasi-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Verifikasi akun pegawai gagal!</div>
-                                    <div class="text-gray-600 mt-2 verifikasi-gagal"></div>
                                 </div>
                             </div>
                         </div>
@@ -1263,7 +1102,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     $('.nama-akun').text(data.name);
                     $('.role-akun').text(data.jabatan);
-                    $('.codeblue').text(data.kode);
 
                 }).catch(error => {
                     console.error('Error:', error);
@@ -1286,7 +1124,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                             var disposition = xhr.getResponseHeader('content-disposition');
                             var matches = /"([^"]*)"/.exec(disposition);
-                            var filename = (matches != null && matches[1] ? matches[1] : 'salary.xlsx');
+                            var filename = (matches != null && matches[1] ? matches[1] : 'Riwayat-Stock.xlsx');
 
                             // The actual download
                             var blob = new Blob([result], {
@@ -1304,8 +1142,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     });
                 });
 
-                // Panggil data support satuan
-                var url = '{{ env('BASE_URL') }}api/master-produk/list-support/satuan';
+                // Panggil data support list produk
+                var url = '{{ env('BASE_URL') }}api/stockist/support/product';
                 fetch(url, {
                     method: 'GET',
                     headers: {
@@ -1313,21 +1151,13 @@ License: You must have a valid license purchased only from themeforest(the above
                     }
                 }).then(response => response.json()).then(data => {
 
-                    // Terapkan ke satuan pembelian dan penjualan create
-                    var select = $('#satuan-beli');
-                    var selectJual = $('#satuan-jual');
-
-                    // Terapkan ke satuan pembelian dan penjualan update
-                    var selectUpdt = $('#satuan-beli-updt');
-                    var selectJualUpdt = $('#satuan-jual-updt');
+                    // Terapkan ke option value produk
+                    var select = $('#produk');
 
                     // Iterasi melalui data dan membuat opsi baru untuk setiap entri
                     $.each(data, function(index, item) {
                         for (let i = 0; i < item.length; i++) {
                             select.append('<option value="' + item[i].id + '"> ' + item[i].name + ' </option>');
-                            selectJual.append('<option value="' + item[i].id + '"> ' + item[i].name + ' </option>');
-                            selectUpdt.append('<option value="' + item[i].id + '"> ' + item[i].name + ' </option>');
-                            selectJualUpdt.append('<option value="' + item[i].id + '"> ' + item[i].name + ' </option>');
                         }
                     });
 
@@ -1335,37 +1165,36 @@ License: You must have a valid license purchased only from themeforest(the above
                     console.error('Error:', error);
                 });
 
-                // Panggil data support kategori produk
-                var url = '{{ env('BASE_URL') }}api/master-produk/list-support/kategori';
-                fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': 'Bearer ' + token
-                    }
-                }).then(response => response.json()).then(data => {
+                // Event handler untuk perubahan pada select option
+                $('#produk').change(function() {
+                    var id = $(this).val();
 
-                    // Terapkan ke satuan pembelian form create
-                    var select = $('#kategori');
-
-                    // Terapkan ke satuan pembelian form create
-                    var selectUpdtKat = $('#kategori-updt');
-
-                    // Iterasi melalui data dan membuat opsi baru untuk setiap entri
-                    $.each(data, function(index, item) {
-                        for (let i = 0; i < item.length; i++) {
-                            select.append('<option value="' + item[i].id + '"> ' + item[i].name + ' </option>');
-                            selectUpdtKat.append('<option value="' + item[i].id + '"> ' + item[i].name + ' </option>');
+                    var url = '{{ env('BASE_URL') }}api/stockist/support/product-detail/' + id;
+                    fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': 'Bearer ' + token
                         }
-                    });
+                    }).then(response => response.json()).then(data => {
 
-                }).catch(error => {
-                    console.error('Error:', error);
+                        $(".dta-stock-lama").val(data.stock).prop("disabled",true);
+                        $(".dta-modal-lama").val(data.modal).prop("disabled",true);
+
+                    }).catch(error => {
+                        console.error('Error:', error);
+                    });
                 });
 
-                // Modal Tambah data admin
-                $(".tambah-admin").click(function() {
+                // Modal Penyesuian Stock Product
+                $(".btn-penyesuaian").click(function() {
                     // Show the modal
                     cash("#modal-create").modal("show");
+                });
+
+                // Modal Opname Stock Import
+                $(".btn-opname").click(function() {
+                    // Show the modal
+                    cash("#modal-opname").modal("show");
                 });
 
                 // Fungsi tombol simpan
@@ -1374,136 +1203,93 @@ License: You must have a valid license purchased only from themeforest(the above
                     event.preventDefault(); // Prevent default form submission
 
                     // Get form data
-                    var category_id = $(".frm-category_id").val();
-                    var nama = $(".frm-nama").val();
-                    var variant = $(".frm-variant").val();
-                    var kode = $(".frm-kode-produk").val();
-                    var expired = $(".frm-expired").val();
-                    var stock = $(".frm-stock").val();
-                    var modal = $(".frm-modal").val();
-                    var harga_jual = $(".frm-harga_jual").val();
-                    var satuan_beli = $(".frm-satuan-beli").val();
-                    var satuan_jual = $(".frm-satuan-jual").val();
-                    var deskripsi = $(".frm-desc").val();
-                    var inp = $('#fileInput')[0];
-                    var foto = inp.files[0];
+                    var product_id = $(".dta-product_id").val();
+                    var stock = $(".dta-stock-baru").val();
+                    var modal = $(".dta-modal-baru").val();
 
-                    if (foto) {
-                        var formData = new FormData();
-                        formData.append('category_id', category_id);
-                        formData.append('nama', nama);
-                        formData.append('variant', variant);
-                        formData.append('kode', kode);
-                        formData.append('expired', expired);
-                        formData.append('stock', stock);
-                        formData.append('modal', modal);
-                        formData.append('harga_jual', harga_jual);
-                        formData.append('satuan_beli', satuan_beli);
-                        formData.append('satuan_jual', satuan_jual);
-                        formData.append('deskripsi', deskripsi);
-                        formData.append('foto', foto);
+                    var formData = new FormData();
+                    formData.append('product_id', product_id);
+                    formData.append('stock', stock);
+                    formData.append('modal', modal);
 
-                        // Kirim permintaan pembaruan produk ke API
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-produk/tambah-produk',
-                            type: 'POST',
-                            headers: {
-                                "Authorization": "Bearer " + token
-                            },
-                            data: formData,
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                // Show the modal
-                                $('.pesan-sukses').text(response.message);
-                                cash("#success-modal-preview").modal("show");
+                    // Kirim permintaan pembaruan produk ke API
+                    $.ajax({
+                        url: '{{ env('BASE_URL') }}api/stockist/penyesuian-stock',
+                        type: 'POST',
+                        headers: {
+                            "Authorization": "Bearer " + token
+                        },
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            // Show the modal
+                            $('.pesan-sukses').text(response.message);
+                            cash("#success-modal-preview").modal("show");
+
+                            setTimeout(function() {
+                                cash("#success-modal-preview").modal("hide");
+
+                                location.reload();
+                            }, 3000); // 3000 milliseconds = 3 seconds
+                        },
+                        error: function(xhr, status, error) {
+                            // Tangani kesalahan dalam permintaan Ajax itu sendiri
+                            console.log(error);
+
+                            // Tampilkan pesan kesalahan yang dikirim oleh server
+                            var response = JSON.parse(xhr.responseText);
+                            if (response.success === false && response.message) {
+                                $('.pesan-gagal').text(response.message);
+                                cash("#warning-modal-preview").modal("show");
 
                                 setTimeout(function() {
-                                    cash("#success-modal-preview").modal("hide");
+                                    cash("#warning-modal-preview").modal("hide");
 
                                     location.reload();
-                                }, 3000); // 3000 milliseconds = 3 seconds
-                            },
-                            error: function(xhr, status, error) {
-                                // Tangani kesalahan dalam permintaan Ajax itu sendiri
-                                console.log(error);
-
-                                // Tampilkan pesan kesalahan yang dikirim oleh server
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.success === false && response.message) {
-                                    $('.pesan-gagal').text(response.message);
-                                    cash("#warning-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 5000 milliseconds = 5 seconds
-                                } else {
-                                    // Tangani kesalahan lainnya jika ada
-                                    // Contoh: pesan kesalahan bawaan dari permintaan Ajax
-                                    alert('Terjadi kesalahan lainnya: ' + error);
-                                }
+                                }, 5000); // 5000 milliseconds = 5 seconds
+                            } else {
+                                // Tangani kesalahan lainnya jika ada
+                                // Contoh: pesan kesalahan bawaan dari permintaan Ajax
+                                alert('Terjadi kesalahan lainnya: ' + error);
                             }
-                        });
-                    }else{
-                        var formData = new FormData();
-                        formData.append('nama', nama);
-                        formData.append('variant', variant);
-                        formData.append('kode', kode);
-                        formData.append('expired', expired);
-                        formData.append('stock', stock);
-                        formData.append('modal', modal);
-                        formData.append('harga_jual', harga_jual);
-                        formData.append('satuan_beli', satuan_beli);
-                        formData.append('satuan_jual', satuan_jual);
-                        formData.append('deskripsi', deskripsi);
-                        formData.append('foto', '');
+                        }
+                    });
+                });
 
-                        // Kirim permintaan pembaruan produk ke API
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-produk/tambah-produk',
-                            type: 'POST',
-                            headers: {
-                                "Authorization": "Bearer " + token
-                            },
-                            data: formData,
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                // Show the modal
-                                $('.pesan-sukses').text(response.message);
-                                cash("#success-modal-preview").modal("show");
+                // Button Download Template Import Opname Stock
+                $(".btn-template").click(function() {
+                    // Akses URL Export data
+                    var linkto = '{{ env('BASE_URL') }}api/stockist/template-opname';
+                    $.ajax({
+                        xhrFields: {
+                            responseType: 'blob',
+                        },
+                        headers: {
+                            'Authorization': 'Bearer ' + token
+                        },
+                        type: 'GET',
+                        url: linkto,
+                        success: function(result, status, xhr) {
 
-                                setTimeout(function() {
-                                    cash("#success-modal-preview").modal("hide");
+                            var disposition = xhr.getResponseHeader('content-disposition');
+                            var matches = /"([^"]*)"/.exec(disposition);
+                            var filename = (matches != null && matches[1] ? matches[1] : 'Template-Import-Opname.xlsx');
 
-                                    location.reload();
-                                }, 3000); // 3000 milliseconds = 3 seconds
-                            },
-                            error: function(xhr, status, error) {
-                                // Tangani kesalahan dalam permintaan Ajax itu sendiri
-                                console.log(error);
+                            // The actual download
+                            var blob = new Blob([result], {
+                                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                            });
+                            var link = document.createElement('a');
+                            link.href = window.URL.createObjectURL(blob);
+                            link.download = filename;
 
-                                // Tampilkan pesan kesalahan yang dikirim oleh server
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.success === false && response.message) {
-                                    $('.pesan-gagal').text(response.message);
-                                    cash("#warning-modal-preview").modal("show");
+                            document.body.appendChild(link);
 
-                                    setTimeout(function() {
-                                        cash("#warning-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 5000 milliseconds = 5 seconds
-                                } else {
-                                    // Tangani kesalahan lainnya jika ada
-                                    // Contoh: pesan kesalahan bawaan dari permintaan Ajax
-                                    alert('Terjadi kesalahan lainnya: ' + error);
-                                }
-                            }
-                        });
-                    }
+                            link.click();
+                            document.body.removeChild(link);
+                        }
+                    });
                 });
 
                 // Get data produk dengan datatable serverside
@@ -1538,209 +1324,58 @@ License: You must have a valid license purchased only from themeforest(the above
                     }
                 });
 
-                // Passing data list row ke dalam modal update
-                $('#data-table').on('click', '.btn-edit', function() {
-                    cash("#modal-update").modal("show");
-                    var id = $(this).attr("data-id");
-                    var nama = $(this).attr("data-nama");
-                    var variant = $(this).attr("data-variant");
-                    var kode = $(this).attr("data-kode");
-                    var expired = $(this).attr("data-expired");
-                    var stock = $(this).attr("data-stock");
-                    var modal = $(this).attr("data-modal");
-                    var harga_jual = $(this).attr("data-harga_jual");
-                    var category_id = $(this).attr("data-category_id");
-                    var satuan_jual = $(this).attr("data-satuan_jual");
-                    var satuan_beli = $(this).attr("data-satuan_beli");
-                    var deskripsi = $(this).attr("data-deskripsi");
-
-                    // Handle edit action
-                    $('.updt-id').val(id);
-                    $('.updt-category_id').val(category_id);
-                    $('.updt-nama').val(nama);
-                    $('.updt-variant').val(variant);
-                    $('.updt-kode-produk').val(kode);
-                    $('.updt-expired').val(expired);
-                    $('.updt-stock').val(stock).prop('disabled',true);
-                    $('.updt-modal').val(modal);
-                    $('.updt-harga_jual').val(harga_jual);
-                    $('.updt-satuan-beli').val(satuan_beli);
-                    $('.updt-satuan-jual').val(satuan_jual);
-                    $('.updt-desc').val(deskripsi);
-                });
-
-                // Fungsi Tombol hapus
-                $('#data-table').on('click', '.btn-delete', function() {
-                    var id = $(this).attr("data-id");
-                    cash("#delete-modal-preview").modal("show");
-                    $('.hapus-btn').click(function() {
-                        // Ajax delete Api
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-produk/hapus-produk/' + id,
-                            type: 'DELETE',
-                            headers: {
-                                'Authorization': 'Bearer ' + token
-                            },
-                            success: function(response) {
-                                    // Show the modal
-                                    $('.hapus-sukses').text(response.message);
-                                    cash("#success-hapus-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#success-hapus-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 3000); // 3000 milliseconds = 3 seconds
-                                },
-                                error: function(xhr, status, error) {
-                                    // Show error alert
-                                    $('.hapus-gagal').text(response.message);
-                                    cash("#warning-hapus-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-update-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 3000 milliseconds = 3 seconds
-                                }
-                        });
-                    });
-                });
-
                 // Tombol Update Admin
                 $(".btn-update").click(function() {
                     // Get form data
-                    var id = $(".updt-id").val();
-                    var category_id = $(".updt-category_id").val();
-                    var nama = $(".updt-nama").val();
-                    var variant = $(".updt-variant").val();
-                    var kode = $(".updt-kode-produk").val();
-                    var expired = $(".updt-expired").val();
-                    var modal = $(".updt-modal").val();
-                    var harga_jual = $(".updt-harga_jual").val();
-                    var satuan_beli = $(".updt-satuan-beli").val();
-                    var satuan_jual = $(".updt-satuan-jual").val();
-                    var deskripsi = $(".updt-desc").val();
                     var inp = $('#fileInput1')[0];
                     var foto = inp.files[0];
 
-                    if (foto) {
-                        var formData = new FormData();
-                        formData.append('id', id);
-                        formData.append('category_id', category_id);
-                        formData.append('nama', nama);
-                        formData.append('variant', variant);
-                        formData.append('kode', kode);
-                        formData.append('expired', expired);
-                        formData.append('modal', modal);
-                        formData.append('harga_jual', harga_jual);
-                        formData.append('satuan_beli', satuan_beli);
-                        formData.append('satuan_jual', satuan_jual);
-                        formData.append('deskripsi', deskripsi);
-                        formData.append('foto', foto);
+                    var formData = new FormData();
+                    formData.append('excel', foto);
 
-                        // Kirim permintaan pembaruan produk ke API
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-produk/update-produk',
-                            type: 'POST',
-                            headers: {
-                                "Authorization": "Bearer " + token
-                            },
-                            data: formData,
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                // Show the modal
-                                $('.update-sukses').text(response.message);
-                                cash("#success-update-modal-preview").modal("show");
+                    // Kirim permintaan pembaruan produk ke API
+                    $.ajax({
+                        url: '{{ env('BASE_URL') }}api/stockist/import-opname',
+                        type: 'POST',
+                        headers: {
+                            "Authorization": "Bearer " + token
+                        },
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            // Show the modal
+                            $('.update-sukses').text(response.message);
+                            cash("#success-update-modal-preview").modal("show");
 
-                                setTimeout(function() {
-                                    cash("#success-update-modal-preview").modal("hide");
+                            setTimeout(function() {
+                                cash("#success-update-modal-preview").modal("hide");
 
-                                    location.reload();
-                                }, 3000); // 3000 milliseconds = 3 seconds
-                            },
-                            error: function(xhr, status, error) {
-                                // Tangani kesalahan dalam permintaan Ajax itu sendiri
-                                console.log(error);
+                                location.reload();
+                            }, 3000); // 3000 milliseconds = 3 seconds
+                        },
+                        error: function(xhr, status, error) {
+                            // Tangani kesalahan dalam permintaan Ajax itu sendiri
+                            console.log(error);
 
-                                // Tampilkan pesan kesalahan yang dikirim oleh server
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.success === false && response.message) {
-                                    $('.update-gagal').text(response.message);
-                                    cash("#warning-update-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-update-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 5000 milliseconds = 5 seconds
-                                } else {
-                                    // Tangani kesalahan lainnya jika ada
-                                    // Contoh: pesan kesalahan bawaan dari permintaan Ajax
-                                    alert('Terjadi kesalahan lainnya: ' + error);
-                                }
-                            }
-                        });
-                    }else{
-                        var formData = new FormData();
-                        formData.append('id', id);
-                        formData.append('category_id', category_id);
-                        formData.append('nama', nama);
-                        formData.append('variant', variant);
-                        formData.append('kode', kode);
-                        formData.append('expired', expired);
-                        formData.append('modal', modal);
-                        formData.append('harga_jual', harga_jual);
-                        formData.append('satuan_beli', satuan_beli);
-                        formData.append('satuan_jual', satuan_jual);
-                        formData.append('deskripsi', deskripsi);
-                        formData.append('foto', '');
-
-                        // Kirim permintaan pembaruan produk ke API
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-produk/update-produk',
-                            type: 'POST',
-                            headers: {
-                                "Authorization": "Bearer " + token
-                            },
-                            data: formData,
-                            processData: false,
-                            contentType: false,
-                            success: function(response) {
-                                // Show the modal
-                                $('.update-sukses').text(response.message);
-                                cash("#success-update-modal-preview").modal("show");
+                            // Tampilkan pesan kesalahan yang dikirim oleh server
+                            var response = JSON.parse(xhr.responseText);
+                            if (response.success === false && response.message) {
+                                $('.update-gagal').text(response.message);
+                                cash("#warning-update-modal-preview").modal("show");
 
                                 setTimeout(function() {
-                                    cash("#success-update-modal-preview").modal("hide");
+                                    cash("#warning-update-modal-preview").modal("hide");
 
                                     location.reload();
-                                }, 3000); // 3000 milliseconds = 3 seconds
-                            },
-                            error: function(xhr, status, error) {
-                                // Tangani kesalahan dalam permintaan Ajax itu sendiri
-                                console.log(error);
-
-                                // Tampilkan pesan kesalahan yang dikirim oleh server
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.success === false && response.message) {
-                                    $('.update-gagal').text(response.message);
-                                    cash("#warning-update-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-update-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 5000 milliseconds = 5 seconds
-                                } else {
-                                    // Tangani kesalahan lainnya jika ada
-                                    // Contoh: pesan kesalahan bawaan dari permintaan Ajax
-                                    alert('Terjadi kesalahan lainnya: ' + error);
-                                }
+                                }, 5000); // 5000 milliseconds = 5 seconds
+                            } else {
+                                // Tangani kesalahan lainnya jika ada
+                                // Contoh: pesan kesalahan bawaan dari permintaan Ajax
+                                alert('Terjadi kesalahan lainnya: ' + error);
                             }
-                        });
-                    }
+                        }
+                    });
                 });
 
                 function logout(name) {
