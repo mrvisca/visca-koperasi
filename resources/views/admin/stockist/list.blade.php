@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="description" content="Icewall admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
-        <title>Visca Koperasi - Master Produk</title>
+        <title>Visca Koperasi - Riwayat Stock</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
         <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -289,7 +289,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="menu">
+                    <a href="{{ route('halamanpos') }}" class="menu">
                         <div class="menu__icon"> <i data-feather="shopping-bag"></i> </div>
                         <div class="menu__title"> Kasir Koperasi </div>
                     </a>
@@ -758,7 +758,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="side-menu">
+                            <a href="{{ route('halamanpos') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="shopping-bag"></i> </div>
                                 <div class="side-menu__title">
                                     Kasir Koperasi

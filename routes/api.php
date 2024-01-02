@@ -5,6 +5,7 @@ use App\Http\Controllers\Secret\AutentikasiController;
 use App\Http\Controllers\Secret\EmployeeController;
 use App\Http\Controllers\Secret\KategoriController;
 use App\Http\Controllers\Secret\MasteradminController;
+use App\Http\Controllers\Secret\PosController;
 use App\Http\Controllers\Secret\ProductController;
 use App\Http\Controllers\Secret\StockistController;
 use App\Http\Controllers\Secret\UnitController;
@@ -81,11 +82,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get("/export-xls", [StockistController::class, 'export']);
         Route::get("/template-opname", [StockistController::class, 'template']);
         Route::post("/import-opname", [StockistController::class, 'importOpname']);
-        // Route::post("/tambah-produk", [ProductController::class, 'tambahProduct']);
-        // Route::post("/update-produk", [ProductController::class, 'update']);
-        // Route::delete("/hapus-produk/{id}", [ProductController::class, 'hapusProduct']);
-        // Route::get("/list-support/kategori", [ProductController::class, 'listCategory']);
-        // Route::get("/list-support/satuan", [ProductController::class, 'listSatuan']);
+    });
+
+    Route::prefix('pos')->group(function () {
+        Route::get("/kategori-list", [PosController::class, 'getCategory']);
     });
 });
 

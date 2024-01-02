@@ -17,44 +17,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="description" content="Icewall admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
         <meta name="keywords" content="admin template, Icewall Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
-        <title>Visca Koperasi - Master Admin</title>
+        <title>Visca Koperasi - Kasir Koperasi</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}" />
-        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
-        <style>
-            #data-table_info {
-                color: white; /* Mengatur warna font menjadi putih */
-            }
-            #data-table_length,
-            #data-table_filter {
-                color: white;      /* Mengatur warna teks menjadi putih */
-            }
-            /* Custom DataTables Styling */
-            .dataTables_wrapper .dataTables_paginate .paginate_button.current,
-            .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-                color: #000 !important;
-                background-color: #007bff !important; /* Ganti dengan warna latar belakang yang diinginkan */
-                border-color: #007bff !important;
-            }
-
-            .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-                color: #495057 !important;
-                background-color: #e9ecef !important; /* Ganti dengan warna latar belakang yang diinginkan */
-                border-color: #dee2e6 !important;
-            }
-
-            .dataTables_wrapper .dataTables_paginate .paginate_button {
-                color: #007bff !important; /* Ganti dengan warna teks yang diinginkan */
-                background-color: #000 !important;
-                border-color: #007bff !important;
-            }
-
-            .dataTables_empty {
-                color: black !important; /* Gunakan !important jika diperlukan untuk mengatasi kelebihan lainnya */
-            }
-
-        </style>
-        <!-- END: CSS Assets-->
     </head>
     <!-- END: Head -->
     <body class="main">
@@ -389,7 +354,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </a>
                 <!-- END: Logo -->
                 <!-- BEGIN: Breadcrumb -->
-                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">Master Admin</a> </div>
+                <div class="-intro-x breadcrumb mr-auto"> <a href="">Aplikasi</a> <i data-feather="chevron-right" class="breadcrumb__icon"></i> <a href="" class="breadcrumb--active">List Riwayat Stock</a> </div>
                 <!-- END: Breadcrumb -->
                 <!-- BEGIN: Notifications -->
                 <div class="intro-x dropdown mr-4 sm:mr-6">
@@ -870,284 +835,301 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="content">
                     <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
                         <h2 class="text-lg font-medium mr-auto">
-                            List Master Admin
+                            Kasir Koperasi
                         </h2>
                         <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-                            <button class="btn btn-primary shadow-md mr-2 tambah-admin">Tambah Data</button>
-                        </div>
-                    </div>
-                    <!-- BEGIN: HTML Table Data -->
-                    <div class="intro-y box p-5 mt-5">
-                        <div class="overflow-x-auto scrollbar-hidden">
-                            <table id="data-table" class="table table-striped" style="width:100%">
-                                <thead>
-                                    <tr class="bg-gray-700 dark:bg-dark-1 text-white">
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">ID</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Nama</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Email</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Role</th>
-                                        <th class="border-b-2 dark:border-dark-5 border-gray-600 whitespace-nowrap">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- END: HTML Table Data -->
-                </div>
-                <!-- END: Content -->
-                <!-- BEGIN: Modal Create Data Content -->
-                <div id="modal-create" class="modal" tabindex="-1" aria-hidden="true" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- BEGIN: Modal Header -->
-                            <div class="modal-header">
-                                <h2 class="font-medium text-base mr-auto">
-                                    Form Tambah Pegawai
-                                </h2>
-                                <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
-                            </div>
-                            <!-- END: Modal Header -->
-                            <!-- BEGIN: Modal Body -->
-                            <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama</label>
-                                    <input type="text" class="form-control frm-nama" placeholder="Jhon Doe" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control frm-email" placeholder="jhon@mail.com" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Password</label>
-                                    <input type="password" class="form-control frm-password" placeholder="******" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-2" class="form-label">Role</label>
-                                    <select class="form-select frm-role_id" required>
-                                        <option disabled selected> --- Pilih Role Akun --- </option>
-                                        <option value="2"> Customer Service </option>
-                                        <option value="3"> Dept Collection </option>
-                                    </select>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Kode Rahasia</label>
-                                    <input type="email" class="form-control frm-kode-rahasia" placeholder="Silahkan masukan kode akses anda" required>
-                                </div>
-                            </div>
-                            <!-- END: Modal Body -->
-                            <!-- BEGIN: Modal Footer -->
-                            <div class="modal-footer text-right">
-                                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
-                                <button type="button" class="btn btn-primary w-20 btn-simpan">Simpan</button>
-                            </div>
-                            <!-- END: Modal Footer -->
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Create Sukses Content -->
-                <div id="success-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Tambah Data Pegawai Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 pesan-sukses"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Create Gagal Content -->
-                <div id="warning-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Tambah Data Gagal!</div>
-                                    <div class="text-gray-600 mt-2 pesan-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Update Content -->
-                <div id="modal-update" class="modal" tabindex="-1" aria-hidden="true" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- BEGIN: Modal Header -->
-                            <div class="modal-header">
-                                <h2 class="font-medium text-base mr-auto">
-                                    Form Update Pegawai
-                                </h2>
-                                <a data-dismiss="modal" href="javascript:;"> <i data-feather="x" class="w-8 h-8 text-gray-500"></i> </a>
-                            </div>
-                            <!-- END: Modal Header -->
-                            <!-- BEGIN: Modal Body -->
-                            <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="modal-form-1" class="form-label">Nama</label>
-                                    <input type="hidden" class="form-control update-id" required>
-                                    <input type="text" class="form-control update-nama" placeholder="Jhon Doe" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Email</label>
-                                    <input type="email" class="form-control update-email" placeholder="jhon@mail.com" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12">
-                                    <label for="fileInput" class="form-label">Kode Rahasia</label>
-                                    <input type="email" class="form-control update-kode-rahasia" placeholder="Silahkan masukan kode akses anda" required>
-                                </div>
-                                <div class="col-span-12 sm:col-span-12 khusus1">
-                                    <label for="modal-form-2" class="form-label">Password</label>
-                                    <input type="password" class="form-control update-password" placeholder="********" >
-                                </div>
-                                <div class="col-span-12 sm:col-span-12 khusus2">
-                                    <label for="modal-form-2" class="form-label">Role</label>
-                                    <select class="form-select update-role_id">
-                                        <option value="" selected disabled> --- Pilih Role Akun --- </option>
-                                        <option value="2"> Customer Service </option>
-                                        <option value="3"> Dept Collection </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- END: Modal Body -->
-                            <!-- BEGIN: Modal Footer -->
-                            <div class="modal-footer text-right">
-                                <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-20 mr-1">Batal</button>
-                                <button type="button" class="btn btn-primary w-20 btn-update">Update</button>
-                            </div>
-                            <!-- END: Modal Footer -->
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Update Sukses Content -->
-                <div id="success-update-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Update Data Pegawai Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 update-sukses"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Update Gagal Content -->
-                <div id="warning-update-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Update Data Gagal!</div>
-                                    <div class="text-gray-600 mt-2 update-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Delete Content -->
-                <div id="delete-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-24 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Apa kamu yakin ingin hapus data pegawai ini?</div>
-                                    <div class="text-gray-600 mt-2">
-                                        Apa kamu yakin akan menghapus data pegawai ini?
-                                        <br>
-                                        Data yang dihapus tidak akan bisa dikembalikan.
+                            <a href="javascript:;" data-toggle="modal" data-target="#new-order-modal" class="btn btn-primary shadow-md mr-2">New Order</a>
+                            <div class="pos-dropdown dropdown ml-auto sm:ml-0">
+                                <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
+                                    <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-feather="chevron-down"></i> </span>
+                                </button>
+                                <div class="pos-dropdown__dropdown-menu dropdown-menu">
+                                    <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="activity" class="w-4 h-4 mr-2"></i> <span class="truncate">INV-0206020 - Tom Cruise</span> </a>
+                                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="activity" class="w-4 h-4 mr-2"></i> <span class="truncate">INV-0206022 - Denzel Washington</span> </a>
+                                        <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="activity" class="w-4 h-4 mr-2"></i> <span class="truncate">INV-0206021 - Johnny Depp</span> </a>
                                     </div>
                                 </div>
-                                <div class="px-5 pb-8 text-center">
-                                    <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 dark:border-dark-5 dark:text-gray-300 mr-1">Batalkan</button>
-                                    <button type="button" class="btn btn-danger w-24 hapus-btn">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pos intro-y grid grid-cols-12 gap-5 mt-5">
+                        <!-- BEGIN: Item List -->
+                        <div class="intro-y col-span-12 lg:col-span-8">
+                            <div class="lg:flex intro-y">
+                                <div class="relative text-gray-700 dark:text-gray-300">
+                                    <input type="text" class="form-control py-3 px-4 w-full lg:w-64 box pr-10 placeholder-theme-8" placeholder="Search item...">
+                                    <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-feather="search"></i>
+                                </div>
+                                <select class="form-select py-3 px-4 box w-full lg:w-auto mt-3 lg:mt-0 ml-auto">
+                                    <option>Sort By</option>
+                                    <option>A to Z</option>
+                                    <option>Z to A</option>
+                                    <option>Lowest Price</option>
+                                    <option>Highest Price</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-12 gap-5 mt-5 kategori">
+                            </div>
+                            <div class="grid grid-cols-12 gap-5 mt-5 pt-5 border-t border-theme-25">
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-3.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Soft Drink</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-3.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Soft Drink</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-3.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Soft Drink</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-12.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">French Fries</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-19.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Snack Platter</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-9.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Spaghetti Fettucine Aglio with Beef Bacon</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-19.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Snack Platter</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                                    <div class="box rounded-md p-3 relative zoom-in">
+                                        <div class="flex-none pos-image relative block">
+                                            <div class="pos-image__preview image-fit">
+                                                <img alt="Icewall Tailwind HTML Admin Template" src="{{ asset('dist/images/food-beverage-1.jpg') }}">
+                                            </div>
+                                        </div>
+                                        <div class="block font-medium text-center truncate mt-3">Vanilla Latte</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END: Item List -->
+                        <!-- BEGIN: Ticket -->
+                        <div class="col-span-12 lg:col-span-4">
+                            <div class="intro-y pr-1">
+                                <div class="box p-2">
+                                    <div class="pos__tabs nav nav-tabs justify-center" role="tablist"> <a id="ticket-tab" data-toggle="tab" data-target="#ticket" href="javascript:;" class="flex-1 py-2 rounded-md text-center active" role="tab" aria-controls="ticket" aria-selected="true">Ticket</a> <a id="details-tab" data-toggle="tab" data-target="#details" href="javascript:;" class="flex-1 py-2 rounded-md text-center" role="tab" aria-controls="details" aria-selected="false">Details</a> </div>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div id="ticket" class="tab-pane active" role="tabpanel" aria-labelledby="ticket-tab">
+                                    <div class="pos__ticket box p-2 mt-5">
+                                        <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
+                                            <div class="pos__ticket__item-name truncate mr-1">Soft Drink</div>
+                                            <div class="text-gray-600">x 1</div>
+                                            <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
+                                            <div class="ml-auto font-medium">$64</div>
+                                        </a>
+                                        <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
+                                            <div class="pos__ticket__item-name truncate mr-1">Soft Drink</div>
+                                            <div class="text-gray-600">x 1</div>
+                                            <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
+                                            <div class="ml-auto font-medium">$46</div>
+                                        </a>
+                                        <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
+                                            <div class="pos__ticket__item-name truncate mr-1">Soft Drink</div>
+                                            <div class="text-gray-600">x 1</div>
+                                            <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
+                                            <div class="ml-auto font-medium">$62</div>
+                                        </a>
+                                        <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
+                                            <div class="pos__ticket__item-name truncate mr-1">French Fries</div>
+                                            <div class="text-gray-600">x 1</div>
+                                            <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
+                                            <div class="ml-auto font-medium">$50</div>
+                                        </a>
+                                        <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
+                                            <div class="pos__ticket__item-name truncate mr-1">Snack Platter</div>
+                                            <div class="text-gray-600">x 1</div>
+                                            <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
+                                            <div class="ml-auto font-medium">$25</div>
+                                        </a>
+                                    </div>
+                                    <div class="box flex p-5 mt-5">
+                                        <div class="w-full relative text-gray-700">
+                                            <input type="text" class="form-control py-3 px-4 w-full bg-gray-200 border-gray-200 pr-10 placeholder-theme-8" placeholder="Use coupon code...">
+                                            <i class="w-4 h-4 hidden absolute-sm my-auto inset-y-0 mr-3 right-0" data-feather="search"></i>
+                                        </div>
+                                        <button class="btn btn-primary ml-2">Apply</button>
+                                    </div>
+                                    <div class="box p-5 mt-5">
+                                        <div class="flex">
+                                            <div class="mr-auto">Subtotal</div>
+                                            <div class="font-medium">$250</div>
+                                        </div>
+                                        <div class="flex mt-4">
+                                            <div class="mr-auto">Discount</div>
+                                            <div class="font-medium text-theme-6">-$20</div>
+                                        </div>
+                                        <div class="flex mt-4">
+                                            <div class="mr-auto">Tax</div>
+                                            <div class="font-medium">15%</div>
+                                        </div>
+                                        <div class="flex mt-4 pt-4 border-t border-gray-200 dark:border-dark-5">
+                                            <div class="mr-auto font-medium text-base">Total Charge</div>
+                                            <div class="font-medium text-base">$220</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex mt-5">
+                                        <button class="btn w-32 border-gray-400 dark:border-dark-5 text-gray-600 dark:text-gray-300">Clear Items</button>
+                                        <button class="btn btn-primary w-32 shadow-md ml-auto">Charge</button>
+                                    </div>
+                                </div>
+                                <div id="details" class="tab-pane" role="tabpanel" aria-labelledby="details-tab">
+                                    <div class="box p-5 mt-5">
+                                        <div class="flex items-center border-b border-gray-200 dark:border-dark-5 pb-5">
+                                            <div>
+                                                <div class="text-gray-600">Time</div>
+                                                <div class="mt-1">02/06/20 02:10 PM</div>
+                                            </div>
+                                            <i data-feather="clock" class="w-4 h-4 text-gray-600 ml-auto"></i>
+                                        </div>
+                                        <div class="flex items-center border-b border-gray-200 dark:border-dark-5 py-5">
+                                            <div>
+                                                <div class="text-gray-600">Customer</div>
+                                                <div class="mt-1">Brad Pitt</div>
+                                            </div>
+                                            <i data-feather="user" class="w-4 h-4 text-gray-600 ml-auto"></i>
+                                        </div>
+                                        <div class="flex items-center border-b border-gray-200 dark:border-dark-5 py-5">
+                                            <div>
+                                                <div class="text-gray-600">People</div>
+                                                <div class="mt-1">3</div>
+                                            </div>
+                                            <i data-feather="users" class="w-4 h-4 text-gray-600 ml-auto"></i>
+                                        </div>
+                                        <div class="flex items-center pt-5">
+                                            <div>
+                                                <div class="text-gray-600">Table</div>
+                                                <div class="mt-1">21</div>
+                                            </div>
+                                            <i data-feather="mic" class="w-4 h-4 text-gray-600 ml-auto"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END: Ticket -->
+                    </div>
+                    <!-- BEGIN: New Order Modal -->
+                    <div id="new-order-modal" class="modal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="font-medium text-base mr-auto">
+                                        New Order
+                                    </h2>
+                                </div>
+                                <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
+                                    <div class="col-span-12">
+                                        <label for="pos-form-1" class="form-label">Name</label>
+                                        <input id="pos-form-1" type="text" class="form-control flex-1" placeholder="Customer name">
+                                    </div>
+                                    <div class="col-span-12">
+                                        <label for="pos-form-2" class="form-label">Table</label>
+                                        <input id="pos-form-2" type="text" class="form-control flex-1" placeholder="Customer table">
+                                    </div>
+                                    <div class="col-span-12">
+                                        <label for="pos-form-3" class="form-label">Number of People</label>
+                                        <input id="pos-form-3" type="text" class="form-control flex-1" placeholder="People">
+                                    </div>
+                                </div>
+                                <div class="modal-footer text-right">
+                                    <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-32 mr-1">Cancel</button>
+                                    <button type="button" class="btn btn-primary w-32">Create Ticket</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Hapus Sukses Content -->
-                <div id="success-hapus-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Hapus Data Pegawai Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 hapus-sukses"></div>
+                    <!-- END: New Order Modal -->
+                    <!-- BEGIN: Add Item Modal -->
+                    <div id="add-item-modal" class="modal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="font-medium text-base mr-auto">
+                                        Soft Drink
+                                    </h2>
+                                </div>
+                                <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
+                                    <div class="col-span-12">
+                                        <label for="pos-form-4" class="form-label">Quantity</label>
+                                        <div class="flex mt-2 flex-1">
+                                            <button type="button" class="btn w-12 border-gray-300 bg-gray-200 dark:bg-dark-1 text-gray-600 dark:text-gray-300 mr-1">-</button>
+                                            <input id="pos-form-4" type="text" class="form-control w-24 text-center" placeholder="Item quantity" value="2">
+                                            <button type="button" class="btn w-12 border-gray-300 bg-gray-200 dark:bg-dark-1 text-gray-600 dark:text-gray-300 ml-1">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-12">
+                                        <label for="pos-form-5" class="form-label">Notes</label>
+                                        <textarea id="pos-form-5" class="form-control w-full mt-2" placeholder="Item notes"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer text-right">
+                                    <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                                    <button type="button" class="btn btn-primary w-24">Add Item</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- END: Add Item Modal -->
                 </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Hapus Gagal Content -->
-                <div id="warning-hapus-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Hapus Data Pegawai Gagal!</div>
-                                    <div class="text-gray-600 mt-2 hapus-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Verifikasi Sukses Content -->
-                <div id="success-verifikasi-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="check-circle" class="w-16 h-16 text-theme-10 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Verifikasi Email Pegawai Berhasil!</div>
-                                    <div class="text-gray-600 mt-2 verifikasi-sukses"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-                <!-- BEGIN: Modal Verifikasi Gagal Content -->
-                <div id="warning-verifikasi-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body p-0">
-                                <div class="p-5 text-center">
-                                    <i data-feather="x-circle" class="w-16 h-16 text-theme-23 mx-auto mt-3"></i>
-                                    <div class="text-3xl mt-5">Oops...Verifikasi akun pegawai gagal!</div>
-                                    <div class="text-gray-600 mt-2 verifikasi-gagal"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: Modal Content -->
-            </div>
-            <!-- END: Content -->
+                <!-- END: Content -->
             </div>
         </div>
         <!-- BEGIN: JS Assets-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
         <script src="{{ asset('dist/js/app.js') }}"></script>
         <script>
             // cek package jquery
@@ -1178,12 +1160,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     window.location.href = "{{ route('login') }}";
                 }
 
-                // Hide Element
-                $('.codeblue').hide();
-                $('.khusus1').hide();
-                $('.khusus2').hide();
-                $('.btn-simpan').hide();
-
+                // Ambil data profile
                 var url = '{{ env('BASE_URL') }}api/dashboard/home';
                 fetch(url, {
                     method: 'GET',
@@ -1194,415 +1171,35 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     $('.nama-akun').text(data.name);
                     $('.role-akun').text(data.jabatan);
-                    $('.codeblue').text(data.kode);
 
                 }).catch(error => {
                     console.error('Error:', error);
                 });
 
-                // Modal Tambah data admin
-                $(".tambah-admin").click(function() {
-                    // Show the modal
-                    cash("#modal-create").modal("show");
-                });
-
-                // Akses Administrator Tambah Data
-                $(".frm-kode-rahasia").change(function() {
-                    var selectedValue = $(this).val();
-                    var compare = $('.codeblue').text();
-                    if(selectedValue == compare)
-                    {
-                        $('.btn-simpan').show();
+                // Ambil data kategori
+                var url = '{{ env('BASE_URL') }}api/pos/kategori-list';
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
                     }
-                });
+                }).then(response => response.json()).then(data => {
 
-                // Fungsi tombol simpan
-                $(".btn-simpan").click(function() {
-                    // Show the modal
-                    event.preventDefault(); // Prevent default form submission
+                    // Sematkan kedalam list kategori di menu kategori kasir koperasi
+                    var kategori = $(".kategori");
 
-                    // Get form data
-                    var name = $(".frm-nama").val();
-                    var email = $(".frm-email").val();
-                    var password = $(".frm-password").val();
-                    var role_id = $(".frm-role_id").val();
-
-                    // Send data using Ajax
-                    $.ajax({
-                        url: '{{ env('BASE_URL') }}api/master-employee/tambah/',
-                        type: "POST",
-                        beforeSend: function(xhr) {
-                            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                        },
-                        data: {
-                            name: name,
-                            email: email,
-                            password: password,
-                            role_id: role_id,
-                        },
-                        success: function(response) {
-                            // Show the modal
-                            $('.pesan-sukses').text(response.message);
-                            cash("#success-modal-preview").modal("show");
-
-                            setTimeout(function() {
-                                cash("#success-modal-preview").modal("hide");
-
-                                location.reload();
-                            }, 3000); // 3000 milliseconds = 3 seconds
-                        },
-                        error: function(xhr, status, error) {
-                            // Show error alert
-                            $('.pesan-gagal').text(response.message);
-                            cash("#warning-modal-preview").modal("show");
-
-                            setTimeout(function() {
-                                cash("#warning-modal-preview").modal("hide");
-
-                                location.reload();
-                            }, 5000); // 3000 milliseconds = 3 seconds
+                    // Iterasi melalui data dan membuat opsi baru untuk setiap entri
+                    $.each(data, function(index, item) {
+                        for (let i = 0; i < item.length; i++) {
+                            kategori.append('<div class="col-span-12 sm:col-span-4 xxl:col-span-3 box p-5 cursor-pointer zoom-in">' +
+                                        '<div class="font-medium text-base">' + item[i].name + '</div>' +
+                                        '<div class="text-gray-600">' + item[i].items + '</div>' +
+                                    '</div>');
                         }
                     });
-                });
 
-                // // Ambil Data Admin
-                // var url = '{{ env('BASE_URL') }}api/master-admin/list';
-                // fetch(url, {
-                //     method: 'GET',
-                //     headers: {
-                //         'Authorization': 'Bearer ' + token
-                //     }
-                // }).then(response => response.json()).then(data => {
-                //     // Panggil fungsi untuk mengisi data ke dalam tbody DataTable
-                //     populateDataTable(data);
-                // }).catch(error => {
-                //     console.error('Error:', error);
-                // });
-
-                // function populateDataTable(data) {
-                //     var tableBody = $("#data-body");
-
-                //     // Bersihkan isi tbody sebelum mengisi dengan data baru
-                //     tableBody.empty();
-
-                //     var rowDataArray = []; // Variabel untuk menyimpan objek baris
-
-                //     // Perulangan menggunakan $.each()
-                //     $.each(data, function(index, item) {
-                //         for (let i = 0; i < item.length; i++) {
-                //             // // Create an object with the desired properties
-                //             var rowData = {
-                //                 id: item[i].id,
-                //                 nomer: item[i].nomer,
-                //                 name: item[i].name,
-                //                 email: item[i].email,
-                //                 role_id: item[i].role_id,
-                //                 roles: item[i].roles,
-                //             };
-
-                //             // Push the object to the data array
-                //             rowDataArray.push(rowData);
-                //         }
-                //     });
-
-                //     var dataTable = $('#data-table').DataTable();
-                //     if (dataTable) {
-                //         // Destroy DataTable
-                //         dataTable.destroy();
-                //     }
-
-                //     // Initialize DataTable
-                //     var table = $('#data-table').DataTable({
-                //         data: rowDataArray,
-                //         columns: [
-                //             { data: 'nomer', className: ' border-b border-gray-600 text-center' },
-                //             { data: 'name', className: 'border-b border-gray-600 text-center' },
-                //             { data: 'email', className: 'border-b border-gray-600 text-center' },
-                //             { data: 'roles', className: 'border-b border-gray-600 text-center' },
-                //             {
-                //                 data: null,
-                //                 render: function (data, type, row) {
-
-                //                     // Create action buttons
-                //                     var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                //                     var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                //                     // Combine the buttons
-                //                     var actions = editBtn + '  ||  ' + deleteBtn;
-                //                     return actions;
-                //                 }
-                //             }
-                //         ],
-                //         "drawCallback": function( settings ) {
-                //             feather.replace();
-                //         },
-                //         "createdRow": function (row, data, dataIndex) {
-                //             // Add a custom class to each row
-                //             $(row).addClass('bg-gray-700 dark:bg-dark-1 text-white');
-                //         }
-                //     });
-
-                //     // Passing data list row ke dalam modal update
-                //     $('#data-table').on('click', '.btn-edit', function() {
-                //         cash("#modal-update").modal("show");
-                //         var id = $(this).attr("data-id");
-                //         var name = $(this).attr("data-name");
-                //         var email = $(this).attr("data-email");
-                //         var role_id = $(this).attr("data-role_id");
-
-                //         // Handle edit action
-                //         $('.update-id').val(id);
-                //         $('.update-nama').val(name);
-                //         $('.update-email').val(email);
-                //         $('.update-role_id').val(role_id);
-                //     });
-
-                //     // Fungsi Tombol hapus
-                //     $('#data-table').on('click', '.btn-delete', function() {
-                //         var id = $(this).attr("data-id");
-                //         cash("#delete-modal-preview").modal("show");
-                //         $('.hapus-btn').show();
-                //         $('.hapus-btn').click(function() {
-                //             // Ajax delete Api
-                //             $.ajax({
-                //                 url: '{{ env('BASE_URL') }}api/master-admin/hapus/' + id,
-                //                 type: 'DELETE',
-                //                 headers: {
-                //                     'Authorization': 'Bearer ' + token
-                //                 },
-                //                 success: function(response) {
-                //                         // Show the modal
-                //                         $('.hapus-sukses').text(response.message);
-                //                         cash("#success-hapus-modal-preview").modal("show");
-
-                //                         setTimeout(function() {
-                //                             cash("#success-hapus-modal-preview").modal("hide");
-
-                //                             location.reload();
-                //                         }, 3000); // 3000 milliseconds = 3 seconds
-                //                     },
-                //                     error: function(xhr, status, error) {
-                //                         // Show error alert
-                //                         $('.hapus-gagal').text(response.message);
-                //                         cash("#warning-hapus-modal-preview").modal("show");
-
-                //                         setTimeout(function() {
-                //                             cash("#warning-update-modal-preview").modal("hide");
-
-                //                             location.reload();
-                //                         }, 5000); // 3000 milliseconds = 3 seconds
-                //                     }
-                //             });
-                //         });
-                //     });
-                // }
-
-                // Get data employee with datatable Serverside
-                // Datatable list Cabang
-                $('#data-table').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": {
-                        "url": '{{ env('BASE_URL') }}api/master-employee/list',
-                        "dataType": "json",
-                        "type": "POST",
-                        "headers": {
-                            'Authorization': 'Bearer ' + token
-                        }
-                    },
-                    "columns": [
-                        { data: 'id', className: ' border-b border-gray-600 text-center' },
-                        { data: 'name', className: 'border-b border-gray-600 text-center' },
-                        { data: 'email', className: 'border-b border-gray-600 text-center' },
-                        { data: 'roles', className: 'border-b border-gray-600 text-center' },
-                        {
-                            data: null,
-                            render: function (data, type, row) {
-
-                                if(data.is_verifikasi == true)
-                                {
-                                    // Jika akun sudah diverifikasi
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                                    // Combine the buttons
-                                    var actions = editBtn + '  ||  ' + deleteBtn;
-                                    return actions;
-                                }else{
-                                    // Jika akun sudah diverifikasi
-                                    var editBtn = '<button class="btn btn-primary btn-edit" data-id="' + data.id + '" data-name="' + data.name + '" data-email="' + data.email + '" data-role_id="' + data.role_id + '"><i data-feather="edit" class="w-4 h-4"></i></button>';
-                                    var verif = '<button class="btn btn-primary btn-verif" data-id="' + data.id + '"><i data-feather="mail" class="w-4 h-4"></i></button>';
-                                    var deleteBtn = '<button class="btn btn-danger btn-delete" data-id="' + data.id + '"><i data-feather="trash-2" class="w-4 h-4"></i></button>';
-
-                                    // Combine the buttons
-                                    var actions = editBtn + '  ||  ' + verif + '  ||  ' + deleteBtn;
-                                    return actions;
-                                }
-                            }
-                        }
-                    ],
-                    "drawCallback": function( settings ) {
-                        feather.replace();
-                    },
-                        "createdRow": function (row, data, dataIndex) {
-                        // Add a custom class to each row
-                        $(row).addClass('bg-gray-700 dark:bg-dark-1 text-white');
-                    }
-                });
-
-                // Passing data list row ke dalam modal update
-                $('#data-table').on('click', '.btn-verif', function() {
-                    var compare = $('.role-akun').text();
-                    if(compare == 'Administrator')
-                    {
-                        var id = $(this).attr("data-id");
-                        // Ajax untuk verifikasi email
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-employee/verifikasi/' + id,
-                            type: 'GET',
-                            headers: {
-                                'Authorization': 'Bearer ' + token
-                            },
-                            success: function(response) {
-                                    // Show the modal
-                                    $('.verifikasi-sukses').text(response.message);
-                                    cash("#success-verifikasi-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#success-verifikasi-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 3000); // 3000 milliseconds = 3 seconds
-                                },
-                                error: function(xhr, status, error) {
-                                    // Show error alert
-                                    $('.verifikasi-gagal').text(response.message);
-                                    cash("#warning-verifikasi-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-verifikasi-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 3000 milliseconds = 3 seconds
-                                }
-                        });
-                    }else{
-                        alert("Anda tidak memiliki akses ini, akses ditolak!");
-
-                        window.location.href = "{{ route('login') }}";
-                    }
-                });
-
-                // Passing data list row ke dalam modal update
-                $('#data-table').on('click', '.btn-edit', function() {
-                    cash("#modal-update").modal("show");
-                    var id = $(this).attr("data-id");
-                    var name = $(this).attr("data-name");
-                    var email = $(this).attr("data-email");
-                    var role_id = $(this).attr("data-role_id");
-
-                    // Handle edit action
-                    $('.update-id').val(id);
-                    $('.update-nama').val(name);
-                    $('.update-email').val(email);
-                    $('.update-role_id').val(role_id);
-                });
-
-                // Fungsi Tombol hapus
-                $('#data-table').on('click', '.btn-delete', function() {
-                    var id = $(this).attr("data-id");
-                    cash("#delete-modal-preview").modal("show");
-                    $('.hapus-btn').show();
-                    $('.hapus-btn').click(function() {
-                        // Ajax delete Api
-                        $.ajax({
-                            url: '{{ env('BASE_URL') }}api/master-employee/hapus/' + id,
-                            type: 'DELETE',
-                            headers: {
-                                'Authorization': 'Bearer ' + token
-                            },
-                            success: function(response) {
-                                    // Show the modal
-                                    $('.hapus-sukses').text(response.message);
-                                    cash("#success-hapus-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#success-hapus-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 3000); // 3000 milliseconds = 3 seconds
-                                },
-                                error: function(xhr, status, error) {
-                                    // Show error alert
-                                    $('.hapus-gagal').text(response.message);
-                                    cash("#warning-hapus-modal-preview").modal("show");
-
-                                    setTimeout(function() {
-                                        cash("#warning-update-modal-preview").modal("hide");
-
-                                        location.reload();
-                                    }, 5000); // 3000 milliseconds = 3 seconds
-                                }
-                        });
-                    });
-                });
-
-                // Akses Administrator
-                $(".update-kode-rahasia").change(function() {
-                    var selectedValue = $(this).val();
-                    var compare = $('.codeblue').text();
-                    if(selectedValue == compare)
-                    {
-                        $('.khusus1').show();
-                        $('.khusus2').show();
-                    }
-                });
-
-                // Tombol Update Admin
-                $(".btn-update").click(function() {
-                    // Ajax update
-                    var id = $('.update-id').val();
-                    var name = $('.update-nama').val();
-                    var email = $('.update-email').val();
-                    var password = $('.update-password').val();
-                    var role_id = $('.update-role_id').val();
-
-                    // Kirim permintaan pembaruan produk ke API
-                    $.ajax({
-                        url: '{{ env('BASE_URL') }}api/master-employee/update/' + id,
-                        type: "PUT",
-                        beforeSend: function(xhr) {
-                            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-                        },
-                        data: {
-                            name: name,
-                            email: email,
-                            password: password,
-                            role_id: role_id,
-                        },
-                        success: function(response) {
-                            // Show the modal
-                            $('.update-sukses').text(response.message);
-                            cash("#success-update-modal-preview").modal("show");
-
-                            setTimeout(function() {
-                                cash("#success-update-modal-preview").modal("hide");
-
-                                location.reload();
-                            }, 3000); // 3000 milliseconds = 3 seconds
-                        },
-                        error: function(xhr, status, error) {
-                            // Show error alert
-                            $('.update-gagal').text(response.message);
-                            cash("#warning-update-modal-preview").modal("show");
-
-                            setTimeout(function() {
-                                cash("#warning-update-modal-preview").modal("hide");
-
-                                location.reload();
-                            }, 5000); // 3000 milliseconds = 3 seconds
-                        }
-                    });
+                }).catch(error => {
+                    console.error('Error:', error);
                 });
 
                 function logout(name) {

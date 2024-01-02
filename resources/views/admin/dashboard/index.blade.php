@@ -255,7 +255,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="menu">
+                    <a href="{{ route('halamanpos') }}" class="menu">
                         <div class="menu__icon"> <i data-feather="shopping-bag"></i> </div>
                         <div class="menu__title"> Kasir Koperasi </div>
                     </a>
@@ -723,7 +723,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="side-menu">
+                            <a href="{{ route('halamanpos') }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="shopping-bag"></i> </div>
                                 <div class="side-menu__title">
                                     Kasir Koperasi
