@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -49,7 +48,7 @@ class ProductController extends Controller
             $item['nama'] = $p->nama;
             $item['variant'] = $p->variant;
             $item['kode'] = $p->kode;
-            $item['foto'] = asset('storage/'.$p->foto);
+            $item['foto'] = asset($p->foto);
             $item['harga_jual'] = $p->harga_jual;
             $item['category_id'] = $p->category_id;
             $item['expired'] = $p->expired;
@@ -100,14 +99,15 @@ class ProductController extends Controller
             $img = Image::make($gambar);
 
             // Mengompres gambar dengan kualitas bagus dan target ukuran di bawah 100KB
-            $img->encode('jpg', 70); // Ubah format dan kualitas kompresi di sini
+            $img->encode('jpg', 60); // Ubah format dan kualitas kompresi di sini
 
             // Mendapatkan ukuran file setelah kompresi
             $fileSize = $img->filesize();
 
             // Simpan gambar ke direktori penyimpanan
-            $path = storage_path("app/public/produk/{$nama_gambar}");
+            $path = public_path("assets/produk/{$nama_gambar}");
             $img->save($path);
+            $simpan = 'assets/produk/'.$nama_gambar;
 
             // Masukan data produk ke database
             $produk = new Product();
@@ -117,7 +117,7 @@ class ProductController extends Controller
             $produk->kode = $request->kode;
             $produk->expired = $request->expired;
             $produk->stock = $request->stock;
-            $produk->foto = 'produk/' . $nama_gambar;
+            $produk->foto = $simpan;
             $produk->modal = $request->modal;
             $produk->harga_jual = $request->harga_jual;
             $produk->satuan_beli = $request->satuan_beli;
@@ -225,7 +225,7 @@ class ProductController extends Controller
             if ($request->hasFile('foto')) {
                 // Cek apakah gambar sudah ada, jika iya, hapus gambar yang sudah ada
                 if ($cari->foto != null) {
-                    Storage::disk('local')->delete('public/'.$cari->foto);
+                    unlink($cari->foto);
                 }
 
                 // Fungsi upload foto
@@ -242,8 +242,9 @@ class ProductController extends Controller
                 $fileSize = $img->filesize();
 
                 // Simpan gambar ke direktori penyimpanan
-                $path = storage_path("app/public/produk/{$nama_gambar}");
+                $path = public_path("assets/produk/{$nama_gambar}");
                 $img->save($path);
+                $simpan = 'assets/produk/'.$nama_gambar;
 
                 // Update Produk
                 $cari->category_id = $request->category_id;
@@ -256,7 +257,7 @@ class ProductController extends Controller
                 $cari->satuan_beli = $request->satuan_beli;
                 $cari->satuan_jual = $request->satuan_jual;
                 $cari->deskripsi = $request->deskripsi;
-                $cari->foto = 'produk/' . $nama_gambar;
+                $cari->foto = $simpan;
                 $cari->save();
 
                 return response()->json([
@@ -297,7 +298,7 @@ class ProductController extends Controller
         }else{
             // Cek apakah gambar sudah ada, jika iya, hapus gambar yang sudah ada
             if ($cari->foto != null) {
-                Storage::disk('local')->delete('public/'.$cari->foto);
+                unlink($cari->foto);
             }
 
             // Hapus Riwayat Stock

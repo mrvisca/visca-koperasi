@@ -86,6 +86,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('pos')->group(function () {
         Route::get("/kategori-list", [PosController::class, 'getCategory']);
+        Route::get("/produk-list", [PosController::class, 'productList']);
     });
 });
 

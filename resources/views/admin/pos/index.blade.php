@@ -871,8 +871,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <div class="grid grid-cols-12 gap-5 mt-5 kategori">
                             </div>
-                            <div class="grid grid-cols-12 gap-5 mt-5 pt-5 border-t border-theme-25">
-                                <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
+                            <div class="grid grid-cols-12 gap-5 mt-5 pt-5 border-t border-theme-25 produk-view">
+                                {{-- <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">
                                     <div class="box rounded-md p-3 relative zoom-in">
                                         <div class="flex-none pos-image relative block">
                                             <div class="pos-image__preview image-fit">
@@ -951,7 +951,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </div>
                                         <div class="block font-medium text-center truncate mt-3">Vanilla Latte</div>
                                     </div>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                         <!-- END: Item List -->
@@ -959,13 +959,13 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="col-span-12 lg:col-span-4">
                             <div class="intro-y pr-1">
                                 <div class="box p-2">
-                                    <div class="pos__tabs nav nav-tabs justify-center" role="tablist"> <a id="ticket-tab" data-toggle="tab" data-target="#ticket" href="javascript:;" class="flex-1 py-2 rounded-md text-center active" role="tab" aria-controls="ticket" aria-selected="true">Ticket</a> <a id="details-tab" data-toggle="tab" data-target="#details" href="javascript:;" class="flex-1 py-2 rounded-md text-center" role="tab" aria-controls="details" aria-selected="false">Details</a> </div>
+                                    <div class="pos__tabs nav nav-tabs justify-center" role="tablist"> <a id="ticket-tab" data-toggle="tab" data-target="#ticket" href="javascript:;" class="flex-1 py-2 rounded-md text-center active" role="tab" aria-controls="ticket" aria-selected="true">Cart</a> <a id="details-tab" data-toggle="tab" data-target="#details" href="javascript:;" class="flex-1 py-2 rounded-md text-center" role="tab" aria-controls="details" aria-selected="false">Details</a> </div>
                                 </div>
                             </div>
                             <div class="tab-content">
                                 <div id="ticket" class="tab-pane active" role="tabpanel" aria-labelledby="ticket-tab">
-                                    <div class="pos__ticket box p-2 mt-5">
-                                        <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
+                                    <div class="pos__ticket box p-2 mt-5 item-list">
+                                        {{-- <a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">
                                             <div class="pos__ticket__item-name truncate mr-1">Soft Drink</div>
                                             <div class="text-gray-600">x 1</div>
                                             <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
@@ -994,7 +994,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="text-gray-600">x 1</div>
                                             <i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>
                                             <div class="ml-auto font-medium">$25</div>
-                                        </a>
+                                        </a> --}}
                                     </div>
                                     <div class="box flex p-5 mt-5">
                                         <div class="w-full relative text-gray-700">
@@ -1098,27 +1098,29 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h2 class="font-medium text-base mr-auto">
-                                        Soft Drink
-                                    </h2>
+                                    <h2 id="item-name" class="font-medium text-base mr-auto"></h2>
                                 </div>
                                 <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                                     <div class="col-span-12">
                                         <label for="pos-form-4" class="form-label">Quantity</label>
                                         <div class="flex mt-2 flex-1">
                                             <button type="button" class="btn w-12 border-gray-300 bg-gray-200 dark:bg-dark-1 text-gray-600 dark:text-gray-300 mr-1">-</button>
-                                            <input id="pos-form-4" type="text" class="form-control w-24 text-center" placeholder="Item quantity" value="2">
+                                            <input id="pos-form-4" type="text" class="form-control w-24 text-center qty" placeholder="Item quantity" value="1">
                                             <button type="button" class="btn w-12 border-gray-300 bg-gray-200 dark:bg-dark-1 text-gray-600 dark:text-gray-300 ml-1">+</button>
                                         </div>
                                     </div>
                                     <div class="col-span-12">
+                                        <label for="pos-form-5" class="form-label">Harga</label>
+                                        <input type="text" id="harga" class="form-control w-full harga" placeholder="Rp. 10000" value="1">
+                                    </div>
+                                    <div class="col-span-12">
                                         <label for="pos-form-5" class="form-label">Notes</label>
-                                        <textarea id="pos-form-5" class="form-control w-full mt-2" placeholder="Item notes"></textarea>
+                                        <textarea id="pos-form-5" class="form-control w-full mt-2 catatan" placeholder="Item notes"></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer text-right">
                                     <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                                    <button type="button" class="btn btn-primary w-24">Add Item</button>
+                                    <button type="button" class="btn btn-primary w-24 tambah-item">Add Item</button>
                                 </div>
                             </div>
                         </div>
@@ -1159,6 +1161,9 @@ License: You must have a valid license purchased only from themeforest(the above
                 } else {
                     window.location.href = "{{ route('login') }}";
                 }
+                
+                // Hide Element
+                $('.harga_jual').hide();
 
                 // Ambil data profile
                 var url = '{{ env('BASE_URL') }}api/dashboard/home';
@@ -1201,6 +1206,111 @@ License: You must have a valid license purchased only from themeforest(the above
                 }).catch(error => {
                     console.error('Error:', error);
                 });
+
+                // Mendapatkan referensi elemen <select>
+                var view = $(".produk-view");
+
+                // Melakukan permintaan Ajax
+                $.ajax({
+                    url: "http://127.0.0.1:8000/api/pos/produk-list",
+                    method: "GET",
+                    headers: {
+                        "Authorization": "Bearer " + token
+                    },
+                    success: function(response) {
+                        // Menghapus semua opsi saat ini dari elemen <select>
+                        view.empty();
+
+                        // Iterasi melalui data dan membuat opsi baru untuk setiap entri
+                        $.each(response, function(index, list) {
+                            for (let p = 0; p < list.length; p++) {
+                                const anchorElement = $('<a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" data-id="' + list[p].id + '" data-name="' + list[p].name + '" data-harga="' + list[p].harga_jual + '" class="intro-y block col-span-12 sm:col-span-4 xxl:col-span-3">' +
+                                        '<div class="box rounded-md p-3 relative zoom-in">' +
+                                            '<div class="flex-none pos-image relative block">' +
+                                                '<div class="pos-image__preview image-fit">' +
+                                                    '<img alt="Midone Tailwind HTML Admin Template" src="' + list[p].foto + '">' +
+                                                '</div>' +
+                                            '</div>' +
+                                            '<div class="block font-medium text-center truncate mt-3">' + list[p].name + '</div>' +
+                                        '</div>' +
+                                    '</a>'
+                                );
+
+                                // Tambahkan elemen <a> ke dalam view
+                                view.append(anchorElement);
+
+                                // Tambahkan event listener untuk setiap elemen <a>
+                                anchorElement.on('click', function() {
+                                    // Dapatkan nama elemen dari atribut data-name pada elemen yang diklik
+                                    const itemName = $(this).data('name');
+                                    const itemPrice = $(this).data('harga');
+
+                                    // Tampilkan nama elemen di dalam modal
+                                    $("#item-name").text(itemName);
+                                    $("#harga").val(itemPrice);
+                                });
+                            }
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        // Penanganan kesalahan jika diperlukan
+                    }
+                });
+
+                // Event listener untuk menyembunyikan modal saat ditutup
+                $('#add-item-modal').on('hidden.bs.modal', function() {
+                    // Bersihkan konten modal ketika ditutup
+                    $('#item-name').text('');
+                });
+
+                // Event listener untuk menghandle submit pada modal
+                // $('#add-item-modal form').on('submit', function(e) {
+                //     e.preventDefault();
+
+                //     // Dapatkan nilai input pada form
+                //     const itemName = $('#add-item-modal input[name="item-name"]').val();
+                //     const itemQuantity = $('#add-item-modal input[name="item-quantity"]').val();
+                //     const itemPrice = $('#add-item-modal input[name="item-price"]').val();
+
+                //     // Buat elemen baru untuk ditambahkan
+                //     const newItemElement = $('<a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-md">' +
+                //                                 '<div class="pos__ticket__item-name truncate mr-1">' + itemName + '</div>' +
+                //                                 '<div class="text-gray-600">x ' + itemQuantity + '</div>' +
+                //                                 '<i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>' +
+                //                                 '<div class="ml-auto">$' + itemPrice + '</div>' +
+                //                             '</a>');
+
+                //     // Tambahkan elemen baru ke dalam list
+                //     $('.item-list').append(newItemElement);
+
+                //     // Reset nilai input pada form
+                //     $('#add-item-modal input[name="item-name"]').val('');
+                //     $('#add-item-modal input[name="item-quantity"]').val('');
+                //     $('#add-item-modal input[name="item-price"]').val('');
+
+                //     // Tutup modal
+                //     $('#add-item-modal').modal('hide');
+                // });
+                
+                // Tambah Item
+                $('.tambah-item').click(function() {
+                    // Variabel Assigment
+                    var itemList = $('.item-list');
+                    var nama = $('#item-name').text();
+                    var harga = $('.harga').val();
+                    var qty = $('.qty').val();
+                    var catatan = $('.catatan').val();
+
+                    var konten = $('<a href="javascript:;" data-toggle="modal" data-target="#add-item-modal" class="flex items-center p-3 cursor-pointer transition duration-300 ease-in-out bg-white dark:bg-dark-3 hover:bg-gray-200 dark:hover:bg-dark-1 rounded-md">' +
+                                    '<div class="pos__ticket__item-name truncate mr-1">' + nama + '</div>' +
+                                    '<div class="text-gray-600">x ' + qty + '</div>' +
+                                    '<i data-feather="edit" class="w-4 h-4 text-gray-600 ml-2"></i>' +
+                                    '<div class="ml-auto font-medium">Rp. ' + harga + '</div>' +
+                                '</a>');
+                    itemList.append(konten);
+
+                    cash("#add-item-modal").modal("hide");
+                })
 
                 function logout(name) {
                     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
